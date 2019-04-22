@@ -1,0 +1,4887 @@
+/*
+Theme Name: Genesis-DevonMag-Child
+Theme URI: http://www.tobybarnes.online
+Description: Designed by <a href="http://www.tobybarnes.online">Toby Barnes</a>.
+Author: Toby Barnes
+Version: 5.7
+Template: Genesis
+Tags: Devon Magazine child of Genesis
+*/
+
+
+/* # Table of Contents
+- Imports
+- HTML5 Reset
+	- Baseline Normalize
+	- Box Sizing
+	- Float Clearing
+- Defaults
+	- Typographical Elements
+	- Headings
+	- Objects
+	- Gallery
+	- Forms
+	- Tables
+- Structure and Layout
+	- Site Containers
+	- Column Widths and Positions
+	- Column Classes
+- Common Classes
+	- Avatar
+	- Genesis
+	- Search Form
+	- Titles
+	- WordPress
+- Widgets
+	- Featured Content
+- Plugins
+	- Genesis eNews Extended
+	- Jetpack
+- Site Header
+	- Title Area
+	- Widget Area
+- Site Navigation
+	- Header Navigation
+	- Primary Navigation
+	- Secondary Navigation
+- Content Area
+	- Entries
+	- Entry Meta
+	- Pagination
+	- Comments
+- Sidebars
+- Footer Widgets
+- Site Footer
+- Media Queries
+	- Retina Display
+	- Max-width: 1200px
+	- Max-width: 960px
+	- Max-width: 800px
+*/
+
+
+/* # Imports
+------------------------------------------------------------------------------------------ ProCyber (Genesis child) ---------- */
+
+@import url(//fonts.googleapis.com/css?family=Merriweather|Roboto:300,700,900|Handlee);
+
+/* # HTML5 Reset
+------------------------------------------------------------------------------------------ ProCyber (Genesis child) ---------- */
+
+/* ## Baseline Normalize
+----------------------------------- ProCyber (Genesis child) ---------- */
+/* normalize.css v3.0.1 | MIT License | git.io/normalize */
+
+html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section,summary{display:block}audio,canvas,progress,video{display:inline-block;vertical-align:baseline}audio:not([controls]){display:none;height:0}[hidden],template{display:none}a{background:0 0}a:active,a:hover{outline:0}abbr[title]{border-bottom:1px dotted}b,strong{font-weight:700}dfn{font-style:italic}h1{font-size:2em;margin:.67em 0}mark{background:#ff0;color:#333}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sup{top:-.5em}sub{bottom:-.25em}img{border:0}svg:not(:root){overflow:hidden}figure{margin:1em 40px}hr{-moz-box-sizing:content-box;box-sizing:content-box;height:0}pre{overflow:auto}code,kbd,pre,samp{font-family:monospace,monospace;font-size:1em}button,input,optgroup,select,textarea{color:inherit;font:inherit;margin:0}button{overflow:visible}button,select{text-transform:none}button,html input[type=button],input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer}button[disabled],html input[disabled]{cursor:default}button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}input{line-height:normal}input[type=checkbox],input[type=radio]{box-sizing:border-box;padding:0}input[type=number]::-webkit-inner-spin-button,input[type=number]::-webkit-outer-spin-button{height:auto}input[type=search]{-webkit-appearance:textfield;-moz-box-sizing:content-box;-webkit-box-sizing:content-box;box-sizing:content-box}input[type=search]::-webkit-search-cancel-button,input[type=search]::-webkit-search-decoration{-webkit-appearance:none}fieldset{border:1px solid silver;margin:0 2px;padding:.35em .625em .75em}legend{border:0;padding:0}textarea{overflow:auto}optgroup{font-weight:700}table{border-collapse:collapse;border-spacing:0}td,th{padding:0}
+
+/* ## Box Sizing
+----------------------------------- ProCyber (Genesis child) ---------- */
+
+*,
+input[type="search"] {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing:    border-box;
+	box-sizing:         border-box;
+}
+
+/* ## Float Clearing
+----------------------------------- ProCyber (Genesis child) ---------- */
+
+.author-box:before,
+.clearfix:before,
+.entry:before,
+.entry-content:before,
+.footer-widgets:before,
+.nav-primary:before,
+.nav-secondary:before,
+.pagination:before,
+.site-container:before,
+.site-footer:before,
+.site-header:before,
+.site-inner:before,
+.wrap:before {
+	content: " ";
+	display: table;
+}
+
+.author-box:after,
+.clearfix:after,
+.entry:after,
+.entry-content:after,
+.footer-widgets:after,
+.nav-primary:after,
+.nav-secondary:after,
+.pagination:after,
+.site-container:after,
+.site-footer:after,
+.site-header:after,
+.site-inner:after,
+.wrap:after {
+	clear: both;
+	content: " ";
+	display: table;
+}
+
+
+/* # Defaults
+------------------------------------------------------------------------------------------ ProCyber (Genesis child) ---------- */
+
+/* ## Typographical Elements
+----------------------------------- ProCyber (Genesis child) ---------- */
+
+body {
+	background: #ffffff; /* devon 4, edit */
+	color: #7b4b0f; /* devon 4, edit */
+	font-family: 'Roboto', Helvetica, Arial, sans-serif; /* Toby v55 was Open Sans etc ... 15-apr-16 */
+	font-size: 18px;
+	font-weight: 300; /* Toby, was 300 ... 3 Oct 14 ... v8.Change from 400 bk to 300 */
+	line-height: 1.625;
+	margin: 0;
+	letter-spacing: 0.00em; /* Toby v55 added 15-apr-16 */
+}
+
+a,
+button,
+input:focus,
+input[type="button"],
+input[type="reset"],
+input[type="submit"],
+textarea:focus,
+.button,
+.gallery img {
+	-webkit-transition: all 0.1s ease-in-out;
+	-moz-transition:    all 0.1s ease-in-out;
+	-ms-transition:     all 0.1s ease-in-out;
+	-o-transition:      all 0.1s ease-in-out;
+	transition:         all 0.1s ease-in-out;
+}
+
+/* Make invisible. Clashes with Web-Dorado survey plugin, 13oct14 */
+
+::-moz-selection { 
+/*	background-color: #333;
+	color: #fff; */
+}
+
+/* v46, W3C Validation
+::selection {
+}
+*/
+
+
+a {
+	color: #0066cc; /* Toby, was #e5554e ... 3 oct 14 */
+	text-decoration: none;
+}
+
+a:hover {
+	color: #0066cc; /* ProCyber v26, was 333, 24-apr-15 */
+	text-decoration: underline; /* ProCyber v26, added 24-apr-15 */
+}
+
+	
+
+p {
+	margin: 0 0 1.625em 0; /* devon 5.5, was 0 0 28px */
+	padding: 0;
+}
+
+ol,
+ul {
+	margin: 0;
+	padding: 0;
+}
+
+li {
+	list-style-type: none;
+}
+
+b,
+strong {
+	font-weight: 700;
+}
+
+blockquote,
+cite,
+em,
+i {
+	font-style: italic;
+	font-family: 'Georgia', Times, serif; /* v18. added 14 oct 14 */
+}
+
+blockquote {
+	margin: 40px;
+}
+
+blockquote::before {
+	content: "\201C";
+	display: block;
+	font-size: 30px;
+	height: 0;
+	left: -20px;
+	position: relative;
+	top: -10px;
+}
+
+
+/* ## Headings
+----------------------------------- ProCyber (Genesis child) ---------- */
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+	color: #2d1900; /* devon 4, edit */
+	font-family: 'Merriweather', Times, Verdana, serif; 
+	font-weight: 700; /* v28. was 900 */
+	line-height: 1.2;
+	margin: 0 0 10px;
+	letter-spacing: -0.01em; /* Toby v55 was -0.04em */
+}
+
+h6 {
+	color: #2d1900; /* devon 4, edit */
+	font-family: 'Merriweather', Times, Verdana, serif; 
+	font-weight: 700;
+	line-height: 1.2;
+	margin: 0px;
+	letter-spacing: -0.01em; /* Toby v55 was -0.04em */
+	text-transform: uppercase;
+}
+
+
+h1 { /* v28. must use <h1> in page title to activate, or will default to .entry-title */
+	font-size: 30px; /* Toby v28, was 36px */
+}
+
+h2 {
+	font-size: 22px; /* Toby v28, was 30px */
+}
+
+h3 {
+	font-size: 20px; /* Toby v28, was 24px */
+}
+
+h4 {
+	font-size: 18px; /* Toby v28, was 20px */
+}
+
+h5 {
+	font-size: 18px; /* Toby v28, was 18px */
+}
+
+h6 {
+	font-size: 16px; /* Toby v28, was 16px */
+}
+
+/* ## Objects
+----------------------------------- ProCyber (Genesis child) ---------- */
+
+embed,
+iframe,
+img,
+object,
+video,
+.wp-caption {
+	max-width: 100%;
+}
+
+img {
+	height: auto;
+}
+
+.featured-content img,
+.gallery img {
+	width: auto;
+}
+
+/* ## Gallery
+----------------------------------- ProCyber (Genesis child) ---------- */
+
+.gallery {
+	overflow: hidden;
+}
+
+.gallery-item {
+	float: left;
+	margin: 0 0 28px;
+	text-align: center;
+}
+
+.gallery-columns-2 .gallery-item {
+	width: 50%;
+}
+
+.gallery-columns-3 .gallery-item {
+	width: 33%;
+}
+
+.gallery-columns-4 .gallery-item {
+	width: 25%;
+}
+
+.gallery-columns-5 .gallery-item {
+	width: 20%;
+}
+
+.gallery-columns-6 .gallery-item {
+	width: 16.6666%;
+}
+
+.gallery-columns-7 .gallery-item {
+	width: 14.2857%;
+}
+
+.gallery-columns-8 .gallery-item {
+	width: 12.5%;
+}
+
+.gallery-columns-9 .gallery-item {
+	width: 11.1111%;
+}
+
+.gallery img {
+	border: 1px solid #ddd;
+	height: auto;
+	padding: 4px;
+}
+
+.gallery img:hover {
+	border: 1px solid #999;
+}
+
+/* ## Forms
+----------------------------------- ProCyber (Genesis child) ---------- */
+
+input,
+select,
+textarea {
+	/* border: 1px solid #ddd; devon 6.3.1 turn off */
+	color: #333;
+	font-weight: 300;
+	width: 100%;
+}
+
+/* devon 6.2, added below for WNY dropdown menus */
+select {
+background: #ffffff;
+	padding: 4px 10px;
+	height: 40px;
+	font-size: 16px;
+}
+
+/* devon 6.3.1 added below, edited above */
+input, textarea {
+	padding: 16px;
+	font-size: 18px;
+
+  background: rgba(255, 255, 255, 1.0); 
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.35), 0 0px 0px rgba(0, 0, 0, 1.0); 
+  -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.35), 0 0px 0px rgba(0, 0, 0, 1.0); 
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.35), 0 0px 0px rgba(0, 0, 0, 1.0); 
+  -webkit-font-smoothing: antialiased; 
+  border-top: 1px solid #777777; 
+  border-bottom: 1px solid #cccccc; 
+  border-left: 1px solid #cccccc; 
+  border-right: 1px solid #cccccc; 
+  margin: 0px; 
+  }
+  
+  
+  
+input:focus,
+textarea:focus {
+	border: 1px solid #999;
+	outline: none;
+}
+
+input[type="checkbox"],
+input[type="image"],
+input[type="radio"] {
+	width: auto;
+}
+
+::-moz-placeholder {
+	color: #333;
+	font-weight: 300;
+	opacity: 1;
+}
+
+::-webkit-input-placeholder {
+	color: #333;
+	font-weight: 300;
+}
+
+
+
+
+button,
+.button {
+	background-color: #d7c9ab; /* devon 6.1 was bba37c ... devon 6, was a09486 (bba37c = 30% 7b4b0f over d7c9ab) */
+	color: #2d1900; /* devon 6, was fff */
+	cursor: pointer;
+	font-size: 16px;
+	font-weight: 700; /* devon 6, was 900 */
+	padding: 10px 20px; /* devon 6.3.1, was 14px 20px */
+	/* text-transform: uppercase; */
+	width: auto;
+	border-radius: 5px; /* devon 6, was 0px */
+	border: #bba37c solid 1px; /* devon 6, was dddddd 0px (d7c9ab = light brown thin lines) */
+}
+
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+	background-color: #d7c9ab; /* devon 6.1 was bba37c ... devon 6, was a09486 (bba37c = 30% 7b4b0f over d7c9ab) */
+	color: #2d1900; /* devon 6, was fff */
+	cursor: pointer;
+	font-size: 16px;
+	font-weight: 700; /* devon 6, was 900 */
+	padding: 14px 20px; /* devon 6, was 16px 24px */
+	/* text-transform: uppercase; */
+	width: auto;
+	border-radius: 5px; /* devon 6, was 10px */
+	border: #bba37c solid 1px; /* devon 6, was dddddd 1px (d7c9ab = light brown thin lines) */
+}
+
+
+.footer-widgets button,
+.footer-widgets input[type="button"],
+.footer-widgets input[type="reset"],
+.footer-widgets input[type="submit"],
+.footer-widgets .button {
+	background-color: #ffffff; /* devon 6, was 0066cc */
+	color: #0066cc; /* devon 6, was fff */
+}
+
+button:hover,
+input:hover[type="button"],
+input:hover[type="reset"],
+input:hover[type="submit"],
+.button:hover {
+	background-color: #ffffff; /* devon 6.1, was 0066cc */
+	color: #0066cc; /* devon 6, added */
+	border: 1px solid #7cf3ff; /* devon 6.1, added */
+	text-decoration: underline; /* devon 6.1, added */
+}
+
+.entry-content .button:hover {
+	color: #fff;
+}
+
+.footer-widgets button:hover,
+.footer-widgets input:hover[type="button"],
+.footer-widgets input:hover[type="reset"],
+.footer-widgets input:hover[type="submit"],
+.footer-widgets .button:hover {
+	background-color: #fff;
+	color: #2d1900; /* devon 6.1, was 333 */
+	text-decoration: underline; /* devon 6.1, added */
+}
+
+.button {
+	display: inline-block;
+}
+
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button {
+	display: none;
+}
+
+/* ## Tables
+----------------------------------- ProCyber (Genesis child) ---------- */
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+	line-height: 2;
+	margin-bottom: 0px; /* Toby v27, was 40px */
+	width: 100%;
+}
+
+tbody {
+	border-bottom: 0px solid #ddd; /* Toby v27, was 1px */
+}
+
+td,
+th {
+	text-align: left;
+}
+
+td {
+	border-top: 0px solid #ddd;  /* Toby v27, was 1px */
+	padding: 6px 0 0 0; /* Toby v27, was 6px 0 */
+}
+
+th {
+	font-weight: 400;
+}
+
+/* Toby v28, added below */
+hr {
+  border: 0;
+  width: 100%;
+  height: 1px;
+  background: #cccccc;
+  margin: 0 0 20px 0;
+}
+
+
+/* # Structure and Layout
+------------------------------------------------------------------------------------------ ProCyber (Genesis child) ---------- */
+
+/* ## Site Containers
+----------------------------------- ProCyber (Genesis child) ---------- */
+
+/* devon 5, added below */
+.site-container {
+	margin: 0 auto;
+	max-width: 1200px;
+	
+	/* devon 5, add box shadow for COLUMN LAYOUT (move from .site-inner used for WIDE LAYOUT) */
+	-moz-box-shadow: 0 2px 6px 5px rgba( 100, 100, 100, .1);
+	-webkit-box-shadow: 0 2px 6px 5px rgba( 100, 100, 100, .1);
+	box-shadow: 0 2px 6px 5px rgba( 100, 100, 100, .1);
+}
+
+.site-inner,
+.wrap {
+	margin: 0 auto;
+	max-width: 1200px;
+}
+
+.site-inner {
+	clear: both;
+	padding-top: 0px; /* devon 4, was 40px */
+	background: #ffffee; /* devon 4, added */
+}
+
+/* ## Column Widths and Positions
+----------------------------------- ProCyber (Genesis child) ---------- */
+
+/* ### Wrapping div for .content and .sidebar-primary */
+
+.content-sidebar-sidebar .content-sidebar-wrap,
+.sidebar-content-sidebar .content-sidebar-wrap,
+.sidebar-sidebar-content .content-sidebar-wrap {
+	width: 980px;
+}
+
+.content-sidebar-sidebar .content-sidebar-wrap {
+	float: left;
+}
+
+.sidebar-content-sidebar .content-sidebar-wrap,
+.sidebar-sidebar-content .content-sidebar-wrap {
+	float: right;
+}
+
+/* ### Content */
+
+.content {
+	float: right;
+	width: 800px;
+	
+	background: #ffffee; /* devon 4, edit */
+	padding: 30px; /* v47 was 20px, also removed all padding from .entry ... ProCyber v26, added 24-apr-15 */
+}
+
+.content-sidebar .content,
+.content-sidebar-sidebar .content,
+.sidebar-content-sidebar .content {
+	float: left;
+}
+
+.content-sidebar-sidebar .content,
+.sidebar-content-sidebar .content,
+.sidebar-sidebar-content .content {
+	width: 580px;
+}
+
+.full-width-content .content {
+	width: 100%;
+}
+
+/* ### Primary Sidebar */
+
+.sidebar-primary {
+	float: right;
+	width: 360px;
+}
+
+.sidebar-content .sidebar-primary,
+.sidebar-sidebar-content .sidebar-primary {
+	float: left;
+}
+
+/* ### Secondary Sidebar */
+
+.sidebar-secondary {
+	float: left;
+	width: 180px;
+}
+
+.content-sidebar-sidebar .sidebar-secondary {
+	float: right;
+}
+
+/* ## Column Classes
+----------------------------------- ProCyber (Genesis child) ---------- */
+/* Link: http://twitter.github.io/bootstrap/assets/css/bootstrap-responsive.css */
+
+.five-sixths,
+.four-sixths,
+.one-fourth,
+.one-half,
+.one-sixth,
+.one-third,
+.three-fourths,
+.three-sixths,
+.two-fourths,
+.two-sixths,
+.two-thirds {
+	float: left;
+	margin-left: 2.564102564102564%;
+}
+
+.one-half,
+.three-sixths,
+.two-fourths {
+	width: 48.717948717948715%;
+}
+
+.one-third,
+.two-sixths {
+	width: 31.623931623931625%;
+}
+
+.four-sixths,
+.two-thirds {
+	width: 65.81196581196582%;
+}
+
+.one-fourth {
+	width: 23.076923076923077%;
+}
+
+.three-fourths {
+	width: 74.35897435897436%;
+}
+
+.one-sixth {
+	width: 14.52991452991453%;
+}
+
+.five-sixths {
+	width: 82.90598290598291%;
+}
+
+.first {
+	clear: both;
+	margin-left: 0;
+}
+
+
+/* # Common Classes
+------------------------------------------------------------------------------------------ ProCyber (Genesis child) ---------- */
+
+/* ## Avatar
+----------------------------------- ProCyber (Genesis child) ---------- */
+
+.avatar {
+	float: left;
+}
+
+.alignleft .avatar,
+.author-box .avatar {
+	margin-right: 20px; /* devon 5.5, was 24px */
+}
+
+.alignright .avatar {
+	margin-left: 20px; /* devon 5.5, was 24px */
+}
+
+.comment .avatar {
+	margin: 0 15px 15px 0; /* devon 5.5, was 0 16px 24px 0 */
+}
+
+/* ## Genesis
+----------------------------------- ProCyber (Genesis child) ---------- */
+
+/* devon 5.5, added */
+.devon-featured-image {
+padding: 5px;
+}
+
+.breadcrumb {
+	font-size: 12px; /* v5. Toby added 3 oct 14 */
+	line-height: 1.25em; /* devon 5.2, was 12px */
+	margin-bottom: 20px;
+}
+
+.archive-description,
+.author-box {
+	/* background-color: #c4f3f8; */ /* devon 5.2, was fff */
+	background: none;
+	font-size: 16px;
+	margin-bottom: 20px; /* devon 5.2, was 40px */
+	padding: 0px; /* devon 5.2, was 40px */
+}
+
+.author-box-title {
+	font-size: 16px;
+	margin-bottom: 4px;
+}
+
+.archive-description p:last-child,
+.author-box p:last-child {
+	margin-bottom: 0;
+}
+
+/* ## Search Form
+----------------------------------- ProCyber (Genesis child) ---------- */
+
+.search-form {
+	overflow: hidden;
+}
+
+.site-header .search-form {
+	float: right;
+	margin-top: 12px;
+}
+
+.entry-content .search-form,
+.site-header .search-form {
+	width: 50%;
+}
+
+.genesis-nav-menu .search input[type="submit"],
+.widget_search input[type="submit"] {
+	border: 0;
+	clip: rect(0, 0, 0, 0);
+	height: 1px;
+	margin: -1px;
+	padding: 0;
+	position: absolute;
+	width: 1px;
+}
+
+/* ## Titles
+----------------------------------- ProCyber (Genesis child) ---------- */
+
+.archive-title {
+	font-size: 20px;
+}
+
+/* devon 5.2, added */
+h1.archive-title {
+margin: 0px;
+font-family: 'Roboto', Helvetica, Arial, sans-serif;
+/* color: #7b4b0f; */
+}
+
+  h1.archive-title { 
+  color: #ff6634; 
+  } 
+  h1.archive-title:after { 
+  content: url("/image-files/sprites/arrow-curved-orange-sm-h18.png"); 
+  height: 18px; 
+  width: 21px; 
+  padding: 0 0 0 3px; 
+  } 
+  
+  
+.entry-title {
+	font-size: 32px; /* Toby v28, was 36px */
+	letter-spacing: -0.04em; /* Toby v28, added */
+	color: #2d1900; /* devon 4, edit */
+}
+
+.entry-title a,
+.sidebar .widget-title a {
+	color: #2d1900; /* devon 5.2, was 000000 */
+}
+
+.entry-title a:hover {
+	color: #0066cc; /* v35, was #e5554e */
+}
+
+.widget-title {
+	font-size: 18px;
+	margin-bottom: 20px;
+}
+
+.footer-widgets .widget-title {
+	color: #fff;
+}
+
+/* ## WordPress
+----------------------------------- ProCyber (Genesis child) ---------- */
+
+a.aligncenter img {
+	display: block;
+	margin: 0 auto;
+}
+
+a.alignnone {
+	display: inline-block;
+}
+
+.alignleft {
+	float: left;
+	text-align: left;
+}
+
+.alignright {
+	float: right;
+	text-align: right;
+}
+
+a.alignleft,
+a.alignnone,
+a.alignright {
+	max-width: 100%;
+}
+
+img.centered,
+.aligncenter {
+	display: block;
+	margin: 0 auto 24px;
+}
+
+img.alignnone,
+.alignnone {
+	margin-bottom: 12px;
+}
+
+a.alignleft,
+img.alignleft,
+.wp-caption.alignleft {
+	margin: 0 20px 20px 0; /* devon 5.5, was 0 24px 24px 0 */
+}
+
+a.alignright,
+img.alignright,
+.wp-caption.alignright {
+	margin: 0 0 20px 20px; /* devon 5.5, was 0 0 24px 24px */
+}
+
+.wp-caption-text {
+	font-size: 14px;
+	font-weight: 700;
+	text-align: center;
+}
+
+.entry-content p.wp-caption-text {
+	margin-bottom: 0;
+}
+
+.sticky {
+}
+
+
+/* # Widgets
+------------------------------------------------------------------------------------------ ProCyber (Genesis child) ---------- */
+
+/* v26, added below */
+.widget-wrap, .silo-menu { /* devon 5.7 added .silo-menu */
+	background: none; /* devon 5.7 turn off #ffff00 ... devon 5.5, was #ffffee (make yellow to show James) */
+	padding: 30px 30px 30px 0; /* devon 4, was 30px */
+}
+
+
+.widget {
+	word-wrap: break-word;
+}
+
+.widget ol > li {
+	list-style-position: inside;
+	list-style-type: decimal;
+	padding-left: 20px;
+	text-indent: -20px;
+}
+
+.widget li li {
+	border: none;
+	margin: 0 0 0 30px;
+	padding: 0;
+}
+
+.widget_calendar table {
+	width: 100%;
+}
+
+.widget_calendar td,
+.widget_calendar th {
+	text-align: center;
+}
+
+
+
+/* ## Featured Content
+----------------------------------- ProCyber (Genesis child) ---------- */
+
+.featured-content .entry {
+	border-bottom: 2px solid #f5f5f5;
+	margin-bottom: 20px;
+	padding: 0 0 24px;
+}
+
+.footer-widgets .entry {
+	border-bottom: 1px dotted #666;
+}
+
+.featured-content .entry-title {
+	font-size: 20px;
+}
+
+
+/* # Plugins
+------------------------------------------------------------------------------------------ ProCyber (Genesis child) ---------- */
+
+/* ## Genesis eNews Extended
+----------------------------------- ProCyber (Genesis child) ---------- */
+
+.enews-widget,
+.enews-widget .widget-title {
+	color: #fff;
+}
+
+.sidebar .widget.enews-widget {
+	background-color: #333;
+}
+
+.enews-widget input,
+.enews-widget input:focus {
+	border: 1px solid #333;
+}
+
+.enews-widget input {
+	font-size: 16px;
+	margin-bottom: 16px;
+}
+
+.enews-widget input[type="submit"] {
+	background-color: #0066cc; /* v35, was #e5554e */
+	color: #fff;
+	margin: 0;
+	width: 100%;
+}
+
+.enews-widget input:hover[type="submit"] {
+	background-color: #fff;
+	color: #333;
+}
+
+.enews form + p {
+	margin-top: 24px;
+}
+
+/* ## Jetpack
+----------------------------------- ProCyber (Genesis child) ---------- */
+
+#wpstats {
+	display: none;
+}
+
+
+/* # Site Header
+------------------------------------------------------------------------------------------ ProCyber (Genesis child) ---------- */
+
+.site-header { 	/* devon 1, edit */
+    /* background: #e1e1e1 url('http://www.progressivecyberspace.com/image-files/bg-header-procyber-h346.jpg'); 
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center -100px; 
+    background-size: 100%;
+*/
+	background: #ffffff; /* devon 4, #c6e1e4 light greyish-aqua-blue */
+	height: 70px; /* devon 1, edit */
+}
+
+/* devon 2, edit */
+.site-header .wrap {
+	padding: 22px 30px; /* devon 3, 22px puts logo on baseline */
+}
+
+/* ## Title Area
+----------------------------------- ProCyber (Genesis child) ---------- */
+
+/* devon 2, edit */
+.title-area {
+	float: left;
+	padding: 0px; 
+	width: 0px; 
+	height: 0px; 
+}
+
+.header-full-width .title-area {
+	width: 100%;
+}
+
+
+.site-title {
+	font-size: 32px;
+	font-weight: 400;
+	line-height: 1.2;
+	color: #ffffff;
+}
+
+.site-title a {
+	color: #ffffff;
+	text-decoration: none;
+}
+
+.site-title a:hover {
+	color: #ffffff;
+	text-decoration: underline;
+}
+/* v8. above  */
+
+
+/* devon 1, edit */
+.header-image .site-title > a {
+	background: url('http://www.devonmagazine.com/image-files/devon-logo-3-eagle4-360x63.png') no-repeat; /* devon 5.1, eagle2 logo */  
+	background-position: left 0px; /* devon 5.1, added */
+	background-size: 330px 58px; /* devon 5.2, was 330px 55px */
+	float: left;
+	height: 63px; /* devon 5.2, was 60px */
+	width: 360px; /* devon 5.1, edit */
+	pointer-events: none !important; /* devon 5.4, added - no effect */
+}
+
+.logo a { pointer-events: none !important; } /* devon 5.4, added */
+
+/* ProCyber v43, added below */
+
+
+
+
+.site-description {
+	font-size: 14px; /* v8. Toby was 16px ... 3 oct 14 */
+	font-weight: 300;
+	line-height: 1.5;
+	
+	/* v8. Toby added below ... 3 oct 14 */
+	color: #dddddd; 
+	
+	/* v11. Toby added below ... 3 oct 14 */
+	/* display: none; */
+}
+
+.site-description,
+.site-title {
+	margin-bottom: 0;
+}
+
+.header-image .site-description,
+.header-image .site-title {
+	display: block;
+	text-indent: -9999px;
+}
+
+/* ## Widget Area
+----------------------------------- ProCyber (Genesis child) ---------- */
+
+.site-header .widget-area {
+	float: right;
+	text-align: right;
+	width: 800px;
+}
+
+
+/* # Site Navigation
+------------------------------------------------------------------------------------------ ProCyber (Genesis child) ---------- */
+
+.genesis-nav-menu {
+	clear: both;
+	font-size: 16px;
+	line-height: 1;
+	width: 100%;
+}
+
+.genesis-nav-menu .menu-item {
+	display: inline-block;
+	text-align: left;
+}
+
+.genesis-nav-menu a {
+	color: #333;
+	display: block;
+	padding: 20px 2px 24px 30px; /* v53 was 30px 24px (determines Nav-bar height) */
+}
+
+.genesis-nav-menu a:hover,
+.genesis-nav-menu .current-menu-item > a,
+.genesis-nav-menu .sub-menu .current-menu-item > a:hover {
+	color: #0066cc; /* v35, was #e5554e */
+}
+
+.genesis-nav-menu .sub-menu {
+	left: -9999px;
+	opacity: 0;
+	position: absolute;
+	-webkit-transition: opacity .4s ease-in-out;
+	-moz-transition:    opacity .4s ease-in-out;
+	-ms-transition:     opacity .4s ease-in-out;
+	-o-transition:      opacity .4s ease-in-out;
+	transition:         opacity .4s ease-in-out;
+	width: 200px;
+	z-index: 99;
+}
+
+.genesis-nav-menu .sub-menu a {
+	background-color: #000000; /* v53 was fff */
+	border: 1px solid #222222; /* v53 was eee */
+	border-top: none;
+	font-size: 14px;
+	padding: 20px;
+	position: relative;
+	width: 200px;
+}
+
+.genesis-nav-menu .sub-menu .sub-menu {
+	margin: -55px 0 0 199px;
+}
+
+.genesis-nav-menu .menu-item:hover {
+	position: static;
+}
+
+.genesis-nav-menu .menu-item:hover > .sub-menu {
+	left: auto;
+	opacity: 1;
+}
+
+.genesis-nav-menu > .first > a {
+	padding-left: 0;
+}
+
+.genesis-nav-menu > .last > a {
+	padding-right: 0;
+}
+
+.genesis-nav-menu > .right {
+	color: #fff;
+	float: right;
+	list-style-type: none;
+	padding: 30px 0;
+}
+
+.genesis-nav-menu > .right > a {
+	display: inline;
+	padding: 0;
+}
+
+.genesis-nav-menu > .rss > a {
+	margin-left: 48px;
+}
+
+.genesis-nav-menu > .search {
+	padding: 10px 0 0;
+}
+
+/* ## Site Header Navigation
+----------------------------------- ProCyber (Genesis child) ---------- */
+
+.site-header .sub-menu {
+	border-top: 1px solid #eee;
+}
+
+.site-header .sub-menu .sub-menu {
+	margin-top: -56px;
+}
+
+.site-header .genesis-nav-menu li li {
+	margin-left: 0;
+}
+
+/* ## Primary Navigation
+----------------------------------- ProCyber (Genesis child) ---------- */
+
+.nav-primary { /* devon 1, edit */
+background: #ffffff; 
+background-size: 100%;
+border-bottom: 1px solid #d7c9ab; /* devon 5, added d1c09e (7b4b0f brown 30% opac. on ffffee = d7c9ab) */
+}
+
+.nav-primary .genesis-nav-menu a {
+/* ProCyber v26, added 24-apr-15 */
+/* background: url('http://www.progressivecyberspace.com/image-files/point-arrow-15x8.gif') 50% calc(100% + 8px) no-repeat; 
+height: calc(100% - 4px); */
+
+	color: #666666; /* devon 1, edit */
+
+    /* v22. Toby added below ... 18 feb 15 */	
+	font-size: 14px;
+	font-weight: bold; /* v26, was 900  24-apr-15 */
+	line-height: 1.5;
+}
+
+.nav-primary .genesis-nav-menu .sub-menu a {
+	color: #666666; /* devon 1, edit */
+}
+
+.nav-primary .genesis-nav-menu a:hover,
+.nav-primary .genesis-nav-menu .current-menu-item > a,
+.nav-primary .genesis-nav-menu .sub-menu .current-menu-item > a:hover {
+/* ProCyber v26, added 24-apr-15 */
+/* background: #ffffff url('http://www.progressivecyberspace.com/image-files/point-arrow-15x8.gif') 50% 100% no-repeat; 
+height: calc(100% - 4px); */
+
+	color: #000000; /* devon 1, edit */
+	text-decoration: none;
+}
+
+/* ## Secondary Navigation
+----------------------------------- ProCyber (Genesis child) ---------- */
+
+.nav-secondary {
+	background-color: #fff;
+}
+
+
+/* # Content Area
+------------------------------------------------------------------------------------------ ProCyber (Genesis child) ---------- */
+
+/* ## Entries
+----------------------------------- ProCyber (Genesis child) ---------- */
+
+.entry {
+/*  background-color: #eee;  v24. added */
+	margin-bottom: 40px;
+	padding: 0px; /* v47 was 10px 15px ... v26. was 30px 35px ... v24. was padding: 50px 60px */
+}
+
+.content .entry {
+	background-color: transparent; /* devon 4, edit */
+}
+
+.entry-content ol,
+.entry-content ul {
+	margin-bottom: 28px;
+	margin-left: 20px; /* toby v55, was 0 */
+}
+
+.entry-content ol > li {
+	list-style-type: decimal; /* toby v55, was none */
+}
+
+.entry-content ul > li {
+	list-style-type: disc; /* toby v55, was none */
+}
+
+.entry-content ol ol,
+.entry-content ul ul {
+	margin-bottom: 0;
+}
+
+.entry-content code {
+	background-color: #333;
+	color: #ddd;
+}
+
+/* ## Entry Meta
+----------------------------------- ProCyber (Genesis child) ---------- */
+
+p.entry-meta {
+	font-size: 16px;
+	margin-bottom: 0;
+}
+
+.entry-header .entry-meta {
+	margin-bottom: 24px;
+}
+
+.entry-footer .entry-meta {
+	border-top: 1px solid #d7c9ab; /* devon 5.1, was 2px solid #f5f5f5 */
+	padding-top: 24px;
+}
+
+.entry-categories,
+.entry-tags {
+	display: block;
+}
+
+.entry-comments-link::before {
+	content: "\2014";
+	margin: 0 6px 0 2px;
+}
+
+/* ## Pagination
+----------------------------------- ProCyber (Genesis child) ---------- */
+
+.pagination {
+	clear: both;
+	margin: 40px 0;
+}
+
+.adjacent-entry-pagination {
+	margin-bottom: 0;
+}
+
+.archive-pagination li {
+	display: inline;
+}
+
+/* devon 6.1, edit below */
+.archive-pagination li a {
+	background-color: #d7c9ab; /* devon 6.1, was 333 */
+	color: #2d1900; /* devon 6.1, was fff */
+	cursor: pointer;
+	display: inline-block;
+	font-size: 16px;
+	font-weight: 700; /* devon 6, added */
+	padding: 8px 12px;
+	width: auto; /* devon 6, added */
+	border-radius: 5px; /* devon 6, added */
+	border: #bba37c solid 1px; /* devon 6.1, added */
+}
+
+
+.archive-pagination li a:hover,
+.archive-pagination .active a {
+	background-color: #ffffff; /* devon 6.1, was 0066cc */
+	color: #0066cc; /* devon 6, added */
+	border: 1px solid #7cf3ff; /* devon 6.1, added */
+}
+
+/* ## Comments
+----------------------------------- ProCyber (Genesis child) ---------- */
+
+/* devon 5.5 added below */
+.comment-meta {
+font-size: 12px;
+line-height: 1.25;
+margin-bottom: 20px;
+}
+
+.comment-respond,
+.entry-comments,
+.entry-pings {
+	background-color: #ffffee; /* devon 4, was #fff */
+	margin-bottom: 20px; /* devon 5.5, was 40px */
+}
+
+.comment-respond,
+.entry-pings {
+	padding: 0px; /* devon 4, was 40px 40px 16px */
+}
+
+.entry-comments {
+	padding: 0px; /* devon 5.5, was 40px */
+}
+
+.comment-header {
+	font-size: 16px;
+}
+
+li.comment {
+	background-color: #ffffff; /* devon 5.5, was f5f5f5 */ 
+	border: 1px solid #7cf3ff; /* devon 5.5, was 2px fff */
+	/* border-right: none; devon 5.5 turn off */
+}
+
+.comment-content {
+	clear: both;
+}
+
+/* devon 5.5, added below */ 
+.comment-content p {
+	font-family: 'Handlee', Roboto, sans-serif;
+	color: #333333;
+	font-size: 18px;
+	line-height: 1.4em;
+	margin-bottom: 0;
+}
+
+.comment-list li {
+	margin-top: 20px; /* devon 5.5, was 24px */ 
+	padding: 25px; /* devon 5.5, was 32px */ 
+}
+
+.comment-list li li {
+	margin-right: -32px;
+}
+
+.comment-respond input[type="email"],
+.comment-respond input[type="text"],
+.comment-respond input[type="url"] {
+	width: 50%;
+}
+
+.comment-respond label {
+	display: block;
+	margin-right: 12px;
+}
+
+.entry-comments .comment-author {
+	margin-bottom: 0;
+	/* devon 5.5 added below */
+	font-weight: 700;
+	color: #333333;
+}
+
+.entry-pings .reply {
+	display: none;
+}
+
+.bypostauthor {
+}
+
+.form-allowed-tags {
+	background-color: #f5f5f5;
+	font-size: 16px;
+	padding: 24px;
+}
+
+
+/* # Sidebars
+------------------------------------------------------------------------------------------ ProCyber (Genesis child) ---------- */
+
+.sidebar {
+	font-size: 16px;
+	
+	margin-top: 0px; /* v22. was 32, restored to 0, no more breadcrumbs ... v9. Toby added to bring down side-column to match main column ... 3 oct 14 */
+}
+
+.sidebar li {
+	border-bottom: 0px dotted #bbbbbb; /* devon 5.6, was 1px */
+	margin-bottom: 0px; /* devon 5.7, was 10px, edited to work with "silo-menu" */
+	padding-bottom: 0px; /* devon 5.6, was 10px */
+}
+
+.sidebar p:last-child,
+.sidebar ul > li:last-child {
+	margin-bottom: 0;
+}
+
+.sidebar .widget {
+	background-color: none; /* devon 5.7 was #fff */
+	margin-bottom: 0px; /* devon 5.7 was 40px */
+	padding: 0px; /* v47 was 20px ... v26, was 40px ... 24-apr-15 */
+}
+
+
+/* devon 5.6, style Silo side-menu - BELOW (devon 5.8 / devon 5.9 added h1 & h4) */
+.silo-menu h1, .silo-menu h2, .silo-menu h3, .silo-menu h4, .silo-menu li {
+font-size: 16px;
+line-height: 1.65em;
+margin: 0;
+}
+
+.silo-menu h1, .silo-menu h2, .silo-menu h3, .silo-menu h4 {
+font-family: 'Merriweather', Times, Verdana, serif; 
+font-weight: 700;
+}
+
+.silo-menu h1, .silo-menu h4 {
+padding: 10px 0;
+border-bottom: 1px solid #d7c9ab;
+}
+
+.silo-menu li {
+font-family: 'Roboto', Helvetica, Arial, sans-serif;
+font-weight: 300;
+}
+
+.silo-menu h3:before, .silo-menu li:before {
+color: #00e8ff; /* 78ddff light-devon-cyan, 7cf3ff devon-cyan, 00e8ff max-devon-cyan */
+padding-right: 5px;
+}
+
+.silo-menu h3:before {
+content: "â—‹";
+}
+
+.silo-menu li:before {
+content: "â—‹â—‹";
+}
+/* devon 5.6, style Silo side-menu - ABOVE */
+
+/* devon 5.7, style Silo side-menu - BELOW */
+.silo-menu h3:hover:before {
+content: "â—";
+}
+
+.silo-menu li:hover:before {
+content: "â—â—";
+}
+
+/* below doesn't work
+.silo-menu h2 > a:active, .silo-menu h3 > a:active, .silo-menu li > a:active {
+text-decoration: underline;
+}
+
+silo-menu > a:active {
+text-decoration: underline;
+}
+*/
+
+/* devon 5.7, style Silo side-menu - ABOVE */
+
+
+
+/* # Footer Widgets
+------------------------------------------------------------------------------------------ ProCyber (Genesis child) ---------- */
+
+.footer-widgets {
+	background-color: #c6e1e4; /* devon 5, edit was #333 */
+	clear: both;
+	padding-top: 30px; /* devon 5, was 40px */
+}
+
+.footer-widgets,
+.footer-widgets a {
+	color: #999;
+}
+
+.footer-widgets input {
+	border: 1px solid #333;
+}
+
+.footer-widgets a.button,
+.footer-widgets a:hover {
+	color: #fff;
+}
+
+.footer-widgets li {
+	border-bottom: 1px dotted #666;
+	margin-bottom: 10px;
+	padding-bottom: 10px;
+}
+
+.footer-widgets .widget {
+	margin-bottom: 40px;
+}
+
+.footer-widgets p:last-child {
+	margin-bottom: 0;
+}
+
+.footer-widgets-1,
+.footer-widgets-2,
+.footer-widgets-3 {
+	width: 340px;
+}
+
+.footer-widgets-1 {
+	margin-right: 60px;
+}
+
+.footer-widgets-1,
+.footer-widgets-2 {
+	float: left;
+}
+
+.footer-widgets-3 {
+	float: right;
+}
+
+
+/* # Site Footer
+------------------------------------------------------------------------------------------ ProCyber (Genesis child) ---------- */
+
+.site-footer {
+/*
+	background-color: #fff;
+	font-size: 16px;
+	line-height: 1;
+	padding: 40px 0;
+	text-align: center;
+*/
+display: none;
+}
+
+.site-footer p {
+/*
+	margin-bottom: 0;
+*/
+display: none;
+}
+
+
+
+
+
+/* # ProCyber. Toby's add-ons (from 3 Oct 14)
+------------------------------------------------------------------------------------------ ProCyber (Genesis child) ---------- */
+
+
+
+
+
+	
+/* v41 toby. added below 3-dec-15 */ 
+.ninja-forms-success-msg p:after {
+content: url("http://www.progressivecyberspace.com/image-files/tick-w20.png"); 
+padding: 0 0 0 5px;
+}
+
+.ninja-forms-response-msg {
+}
+.ninja-forms-success-msg {
+}
+
+
+
+
+.inside-user-box {
+background: #dedbd8; 
+float: left;
+width: 100%; /* v14. Toby, added 4 oct 14, and made below invisible */
+
+height: auto;
+border: 1px solid #cccccc;  /* ... */ 
+padding: 15px; /* v14. Toby, was 10px ... 4 oct 14 */
+margin: 15px 0 15px 0; /* v14. simplified this line */
+}
+
+
+
+/* v44 changed from v32. Used for 3xlogo comparison only! */
+.generic-float-center {
+margin-left: auto;
+margin-right: auto;
+}
+.generic-w-80pc {
+width: 80%;
+}
+.generic-h-80pc {
+height: 80%;
+}
+
+
+/* v47, below, change "class p" to "p.class"  */
+p.price {
+font-size: 18px;
+font-weight: 700;
+color: #a09486;
+margin: 0px
+}
+p.mini-price-text {
+font-family: inherit;
+font-size: 14px;
+font-weight: 400;
+line-height: 1.5em;
+text-align: left;
+color: #a09486;
+margin: 0px; 
+}
+
+/* v47, ... */
+p.mini-text {
+font-family: inherit;
+font-size: 14px;
+font-weight: 400;
+line-height: 1.5em;
+text-align: left;
+color: #333333;
+margin: 0px; 
+}
+
+
+
+
+/* ********** NEW CSS TOOLS v33 ********** */
+
+
+
+/* ********** v34, GENERIC divs, added below ********** */
+
+
+/* v43 added */
+.generic-image-border img {
+border: 1px solid #dddddd !important;
+}
+
+/* v43 added to override image-slider plugin */
+/* NOT WORKING
+.huge_it_slideshow_image_wrap_2 {
+width: 100% important;
+height: 100% important;
+}
+*/
+
+.generic-clear {
+clear: both;
+}
+
+.generic-float-left {
+display: inline-block;
+float: left;
+text-align: left;
+padding-right: 10px;
+}
+
+.generic-float-right {
+display: inline-block;
+float: right;
+text-align: right;
+padding-left: 10px;
+}
+
+.generic-w-20pc {
+width: 20%;
+height: 20%;
+}
+
+.generic-w-30pc {
+width: 30%;
+height: 30%;
+}
+
+
+
+
+
+
+/* ********** NEW CSS TOOLS v31 ********** */
+
+
+/* v48 added below */
+.generic-margin-top-20px {
+margin-top: 20px;
+}
+
+.padding-bottom-20px,
+.generic-padding-bottom-20px { /* v48 added the word "generic-" */
+padding-bottom: 20px;
+}
+
+.bg-green {
+background: #e8f6de !important; 
+}
+
+
+
+/* ********** EXTRA BOXES MERGED v30 ********** */
+
+/*
+
+.photocaption, 
+.photocaption-w50pc-right,
+.photocaption-noborder {
+background: #ffffff;
+}
+
+.photocaption, 
+.photocaption-w50pc-right {
+border: 1px solid #ded8d1;
+}
+
+.photocaption-noborder {
+border: 0px solid #ded8d1;
+}
+
+.photocaption-w50pc-right {
+float: right;
+}
+
+.photocaption-w50pc-right {
+height: auto;
+width: 45%;
+}
+
+.photocaption, 
+.photocaption-noborder {
+height: auto;
+width: 100%;
+}
+
+
+.photocaption-noborder img, 
+.photocaption img {
+border: 0px solid #dddddd; /
+}
+
+.photocaption-w50pc-right {
+margin: 0 0 10px 5%;
+}
+
+.photocaption, 
+.photocaption-noborder {
+margin: 0 0 20px 0;
+}
+
+.photocaption, 
+.photocaption-w50pc-right {
+padding: 15px 15px 8px 15px;
+}
+
+.photocaption-noborder {
+padding: 0px;
+}
+
+.photocaption h2,
+.photocaption-w50pc-right h2 {
+font-family: inherit;
+font-size: 24px;
+font-weight: 700;
+line-height: 1.2;
+text-align: left;
+color: #000000;
+margin: 0 0 5px 0;
+}
+
+.photocaption h3,
+.photocaption-w50pc-right h3 {
+font-family: inherit; 
+font-size: 16px;
+font-weight: 700; 
+line-height: 1.5em; 
+text-align: left;
+color: #000000;
+margin: 0 0 0 0;
+}
+
+.wp-dynamic-widgets p,
+.photocaption p, 
+.photocaption-noborder p, 
+.photocaption-w50pc-right p { 
+font-family: inherit;
+font-size: 14px;
+font-weight: 400;
+line-height: 1.5em;
+text-align: left;
+color: #333333;
+margin: 0px; 
+}
+
+.wp-dynamic-widgets p,
+.photocaption p, 
+.photocaption-w50pc-right p {
+padding: 0 0 5px 0; 
+}
+
+.photocaption-noborder p {
+padding: 0 0 10px 0; 
+}
+
+.photocaption p a, 
+.photocaption-w50pc-right p a, 
+.photocaption-noborder p a {
+text-decoration: none;
+color: #0066cc;
+}
+
+.photocaption p a:hover, 
+.photocaption-w50pc-right p a:hover,
+.photocaption-noborder p a:hover {
+color: #0066cc;
+background: none;
+text-decoration: underline;
+}
+
+
+*/
+
+
+
+
+
+
+
+/* **********  v30, Name Changes: "side-box" becomes "colour-photocaption"  ... & ... "blank-top-margin" Disabled ********** */
+
+
+
+.procyber-site-footer {
+	background-color: #c4f3f8; /* devon 5, was transparent; devon 5.1 was c6e1e4; bef9ff = bright blue; c4f3f8 = br.blue PSD.Satur.-20 */
+	font-size: 14px;
+	line-height: 1.5em;
+	padding: 30px 0; /* devon 5, was 40px 0 */
+	text-align: center;
+	border-top: 1px solid #7cf3ff; /* devon 5.1, added 7cf3ff (c4f3f8 bg blue, PSD.Lightn -15, Satur. Max) */
+}
+
+.procyber-site-footer p {
+	margin-bottom: 0;
+}
+
+
+
+
+
+/* Toby v28, added 2-may-2015 */
+
+/*
+.survey-container {
+border: 1px solid #cccccc;
+background: #ffffdd;
+width: 100%; 
+height: auto;
+margin: 10px 0 20px 0;
+padding: 0px;
+font-family: monospace, monospace; 
+}
+*/
+
+/* v32, coded ACCESS BAR ... use this instead of graphic */ 
+/*
+.splash-promo-bar {
+width: 100%;
+height: auto;
+background: red;
+padding: 15px 0 15px 0;
+vertical-align: middle;
+margin: 0 0 20px 0;
+}
+
+.splash-promo-bar h2 {
+font-family: 'Roboto', Helvetica, Arial, sans-serif; 
+text-align: center;
+font-size: 28px;
+font-weight: 700;
+line-height: 1.0em;
+color: #ffffff;
+vertical-align: middle;
+padding: 5px 15px 0px 15px;
+margin: 0px;
+}
+
+.splash-promo-bar p {
+font-family: 'Roboto', Helvetica, Arial, sans-serif;
+text-align: center;
+font-size: 18px;
+font-weight: 700;
+line-height: 1.0em;
+color: #ffffff;
+vertical-align: middle;
+padding: 0px 15px 5px 15px;
+margin: 0px;
+}
+*/
+
+/* v32, Used for arrows on either side of .splash-promo-bar */ 
+/*
+.float-left-column {
+display: inline-block;
+background: none;
+width: 37px;
+height: 100%;
+float: left;
+padding: 15px 0px 25px 0px;
+}
+
+.float-right-column {
+display: inline-block;
+background: none;
+width: 37px;
+height: 100%;
+float: right;
+padding: 15px 0px 25px 0px;
+}
+*/
+
+/* Toby v56 added below */
+/*
+.case-study-logos {
+background: #666666;
+width: 100%;
+height: auto;
+padding: 20px 0 20px 0;
+}
+
+
+.logo-plymouth,
+.logo-block,
+.logo-abbey,
+.logo-dc,
+.logo-psm,
+.logo-smuk {
+max-height: 120px;
+padding: 0 10px 0 10px;
+}
+
+.logo-plymouth {
+width: 28%;
+}
+
+.logo-block {
+width: 12%;
+}
+
+.logo-abbey {
+width: 13%;
+}
+
+.logo-dc {
+width: 29%;
+}
+
+.logo-psm {
+width: 50%;
+}
+
+.logo-smuk {
+width: 50%;
+}
+
+*/
+
+
+
+/* # Media Queries
+------------------------------------------------------------------------------------------ ProCyber (Genesis child) ---------- */
+
+@media only screen and (max-width: 1200px) {
+
+	/* devon 3, no change */
+	.site-header {
+	background-position: center -60px; 
+	}
+	
+	/* devon 5, added below */
+	.site-container {
+	margin: 0 auto;
+	max-width: 960px;
+	}
+
+	.site-inner,
+	.wrap {
+		max-width: 960px; /* v52 was 960px */
+	}
+
+	.content-sidebar-sidebar .content-sidebar-wrap,
+	.sidebar-content-sidebar .content-sidebar-wrap,
+	.sidebar-sidebar-content .content-sidebar-wrap {
+		width: 740px;
+	}
+
+	.content,
+	.site-header .widget-area {
+		width: 620px;
+	}
+
+	.sidebar-content-sidebar .content,
+	.sidebar-sidebar-content .content,
+	.content-sidebar-sidebar .content {
+		width: 400px;
+	}
+
+	.footer-widgets-1,
+	.footer-widgets-2,
+	.footer-widgets-3,
+	.sidebar-primary,
+	.title-area {
+		width: 300px;
+	}
+
+	.footer-widgets-1 {
+		margin-right: 30px;
+	}
+
+}
+
+@media only screen and (max-width: 960px) { /* v52 was 960px */
+
+	.site-header {
+	background-position: center -40px;
+	height: 80px; /* devon 3, added */ 
+	}
+
+	
+	.site-inner,
+	.wrap {
+	/* max-width: 800px;   devon 4, turn off */
+	}
+	
+	/* devon 5, added */
+	.widget-wrap, .silo-menu { /* devon 5.7 added .silo-menu */
+	padding: 30px; 
+	}
+	
+	/* devon 1, edit */
+	.header-image .site-title > a {
+	background: url('http://www.devonmagazine.com/image-files/devon-logo-3-eagle4-360x63.png') no-repeat; /* devon 5.1, eagle2 logo */ 
+	background-position: center 17px; /* devon 5, was center 12px */
+	background-size: 300px 52px; /* devon 5.2, was 300px 50px */
+	min-height: 115px;
+	width: 100%;
+	margin: 0px; /* devon 3, must add new logo for narrow screens with empty space on left to compensate for eagle on right*/
+	padding: 0px;
+	}
+
+	.content,
+	.content-sidebar-sidebar .content,
+	.content-sidebar-sidebar .content-sidebar-wrap,
+	.footer-widgets-1,
+	.footer-widgets-2,
+	.footer-widgets-3,
+	.sidebar-content-sidebar .content,
+	.sidebar-content-sidebar .content-sidebar-wrap,
+	.sidebar-primary,
+	.sidebar-secondary,
+	.sidebar-sidebar-content .content,
+	.sidebar-sidebar-content .content-sidebar-wrap,
+	.site-header .widget-area,
+	.title-area {
+		width: 100%;
+	}
+
+
+	/* v37, From ALTITUDE, below: "@media only screen and (max-width: 1023px) {" */
+	/* .site-header {
+	position: static;
+	} */
+	
+	/*.genesis-nav-menu, */ 
+	.nav-primary {  /* v37, was ALTITUDE:  .front-page .site-header */
+	/* background: #000000; devon 5, turn off */
+	}
+	/* v37, From ALTITUDE, above */
+	
+
+
+	.nav-primary .genesis-nav-menu a:hover,
+	.nav-primary .genesis-nav-menu .current-menu-item > a,
+	.nav-primary .genesis-nav-menu .sub-menu .current-menu-item > a:hover {
+	color: #000000; /* devon 5, was #ffffff */
+	text-decoration: none;
+	background: #ffffff; /* devon 5, was #000000 */
+	}
+
+	/* v37, added below */
+	.nav-primary .genesis-nav-menu .sub-menu a {
+	background: #ffffff; /* devon 5, was #000000 */
+	border-width: 0px 1px 1px 1px; /* v46, W3C Validation; was  border: 0 1px 1px 1px; */
+	border-color: #222222;
+	}
+
+
+
+	
+	.site-header .wrap {
+		padding: 0px;  /* v57 was 0px 5% ... v44. Toby was  10px 5%;  */
+		/* margin: 0 auto 0 auto; */
+	}
+
+	.header-image .title-area {
+		background-position: center top;
+	}
+
+	.genesis-nav-menu li,
+	.site-header ul.genesis-nav-menu,
+	.site-header .search-form {
+		float: none;
+	}
+
+	.genesis-nav-menu,
+	.site-description,
+	.site-header .title-area,
+	.site-header .search-form,
+	.site-title {
+		text-align: center;
+	}
+
+	.genesis-nav-menu a,
+	.genesis-nav-menu > .first > a,
+	.genesis-nav-menu > .last > a {
+		padding: 20px 16px; /* v53 was 20px 16px (determines Nav-bar height) */
+	}
+
+	.site-header .search-form {
+		margin: 16px auto;
+	}
+
+	.genesis-nav-menu li.right {
+		display: none;
+	}
+
+	.footer-widgets-1 {
+		margin-right: 0;
+	}
+
+}
+
+
+
+/* PROCYBER @media 800px */
+
+@media only screen and (max-width: 800px) {
+
+	body {
+		background-color: #fff;
+		font-size: 16px;
+	}
+
+	.site-inner,
+	.wrap {
+	/*	padding-left: 5%;
+		padding-right: 5%;  devon 4 turn off */
+	}
+
+	.site-header { 
+	height: 80px; /* devon 3, edit */
+	}
+	
+	/* devon 1, edit */
+	.header-image .site-title > a {
+	/* devon 5.2, turn off
+	background: url('http://www.devonmagazine.com/image-files/devon-logo-3-eagle4-360x63.png') no-repeat; 
+	background-position: center 17px;
+	background-size: 300px 50px;
+	min-height: 115px;
+	width: 100%;
+	margin: 0px; 
+	padding: 0px;
+	*/
+	}
+	
+	
+	.archive-description,
+	.author-box,
+	.comment-respond,
+	.entry,
+	.entry-comments,
+	.entry-pings,
+	.sidebar .widget,
+	.site-header {
+		padding: 0;
+	}
+
+	.archive-pagination li a {
+		margin-bottom: 4px;
+	}
+
+	.five-sixths,
+	.four-sixths,
+	.one-fourth,
+	.one-half,
+	.one-sixth,
+	.one-third,
+	.three-fourths,
+	.three-sixths,
+	.two-fourths,
+	.two-sixths,
+	.two-thirds {
+		margin: 0;
+		width: 100%;
+	}
+
+	.sidebar .widget.enews-widget {
+		padding: 40px;
+	}
+
+	/* devon 5.2 added */
+	a,
+	.entry-title a,
+	.sidebar .widget-title a {
+	color: #0066cc; 
+	text-decoration: underline; 
+	}
+}
+
+
+
+/* ProCyber v38 below. MAKE 'HAMBURGER' RESPONSIVE MENU */
+
+/* Responsive Navigation
+---------------------------------------------------------------------------------------------------- */
+
+/* Standard Navigation
+--------------------------------------------- */
+
+nav {
+	clear: both;
+}
+
+/* Navigation toggles
+--------------------------------------------- */
+
+.sub-menu-toggle,
+.menu-toggle {
+	display: none;
+	visibility: hidden;
+}
+
+/* Navigation toggles - Ensure Menu Displays when Scaled Up
+--------------------------------------------- */
+
+@media only screen and (min-width: 668px) { /* v49 was 758px ... v38 was 768px */
+
+	nav {
+		display: block !important;
+	}
+}
+
+/* Navigation toggles - Mobile (Change max width as you see fit)
+--------------------------------------------- */
+
+@media only screen and (max-width: 667px) { /* v49 was 757px ... v38 was 767px */
+
+
+	/* v52 added below NOT HAMBURGER CODE */
+	.site-header {
+	background-position: center -20px; 
+	}
+	
+	
+	/* v45 add "button" ... v44 added below. centers the hamburger icon */
+	.menu-toggle, 
+	button.menu-toggle {
+	text-align: center;
+	}
+
+	.menu-toggle,
+	.sub-menu-toggle {
+		display: block;
+		font-size: 30px; /* ProCyber v38, was 20px */
+		/* font-size: 2rem; */
+		font-weight: 700;
+		margin: 0 auto; /* v44 was 0px ... ProCyber v38, was  0 auto  */
+		overflow: hidden;
+		
+		padding: 0 8% 0 8%; /* ProCyber v38, was padding: 20px */
+		
+		text-align: left; /* ProCyber v38, was center */
+		visibility: visible;
+		
+		width: 100%;
+		height: 61px;
+	}
+	
+
+	button.menu-toggle,
+	button.sub-menu-toggle {
+		background-color: #ffffff; /* devon 5, was #000000 */
+		color: #888888; /* ProCyber v38, was 999 */
+		border-bottom: 1px solid #d7c9ab; /* devon 5, added d1c09e (7b4b0f brown 30% opac. on ffffee = d7c9ab) */
+		/* devon 6.2 added below */
+		border-top: 0px solid #d7c9ab;
+		border-left: 0px solid #d7c9ab;
+		border-right: 0px solid #d7c9ab;
+		border-radius: 0px;
+		text-decoration: none;
+		}
+
+/*
+.nav-primary .genesis-nav-menu a
+text-decoration: none;
+}
+*/
+
+	.sub-menu-toggle {
+		padding: 18px;
+		/* padding: 1.8rem; */
+		position: absolute;
+		right: 0;
+		top: 0;
+	}
+
+
+
+	.menu-toggle:before {
+		content: "\2261"; /* HAMBURGER SYMBOL */
+		color: #000000; /* devon 5, was #ffffff */
+	}
+	
+	/* ProCyber v38, added below */
+	/* v44 make invisible
+		.menu-toggle:after {
+		float: right;
+		font-size: 16px;
+		font-weight: 700;
+		vertical-align: middle;
+		padding: 11px 0 0 0;
+		color: #888888;
+		content: "MENU";
+		}
+	*/
+
+	.menu-toggle.activated:before {
+		content: "\2191"; /* UP ARROW */
+		color: #000000; /* devon 5, was #ffffff */
+	}
+
+	.sub-menu-toggle:before {
+		content: "+";
+	}
+
+	.sub-menu-toggle.activated:before {
+		content: "-";
+		color: #000000; /* devon 5, was #ffffff */
+	}
+
+	nav {
+		display: none;
+		position: relative;
+	}
+
+	.genesis-nav-menu .menu-item {
+		background-color: #ffffff; /* devon 5, was #000000 */
+		display: block;
+		position: relative;
+		text-align: left;
+	}
+
+	.genesis-nav-menu .menu-item:hover {
+		position: relative;
+	}
+
+	.genesis-nav-menu .sub-menu {
+		clear: both;
+		display: none;
+		opacity: 1;
+		position: static;
+		width: 100%;
+	}
+
+	.genesis-nav-menu .sub-menu a {
+		border-left: 0;
+		position: relative;
+		width: auto;
+	}
+
+	.genesis-nav-menu .sub-menu .sub-menu {
+		margin: 0;
+	}
+
+	.genesis-nav-menu .sub-menu .sub-menu a {
+		background-color: #ffffff; /* devon 5, was #000000 */
+		padding-left: 30px;
+	}
+
+	.genesis-nav-menu .sub-menu .sub-menu .sub-menu a {
+		background-color: #ffffff; /* devon 5, was #000000 */
+		padding-left: 40px;
+	}
+
+	.nav-primary a:hover,
+	.nav-primary .current-menu-item > a {
+		color: #888888; /* ProCyber v38, was #333 */
+	}
+
+}
+
+
+
+
+
+@media screen and (max-width: 650px) {
+.generic-w-20pc {
+width: 25%;
+height: 25%;
+}
+
+.generic-w-30pc {
+width: 35%;
+height: 25%;
+}
+}
+
+
+
+/* v31 @media break points to make side-box responsive */
+
+@media screen and (max-width: 550px) { 
+
+.generic-w-30pc {
+width: 40%;
+height: 40%;
+}
+
+.generic-w-20pc {
+width: 35%;
+height: 35%;
+}
+
+.photocaption-w50pc-right {
+     	border: 1px solid #ded8d1;
+     	background: #ffffff;
+     	font-size: 11px;
+     	margin: 0 0 20px 0;
+     	padding: 15px 15px 8px 15px;
+     	width: 100%;
+     	/* width: calc(100% - 32px); */
+     	/* float: right; */
+ }
+}
+
+
+
+/* v52 added below */
+@media only screen and (max-width: 540px) {
+	/* v52 added below */
+	.site-header {
+	background-size: 120%;
+	background-position: center -20px; 
+	}
+	}
+
+
+/* v49 toby. added below 30-jan-16 */ 
+@media only screen and (max-width: 481px) {
+	.site-inner {
+		padding: 0px;
+	}
+	
+	.widget-wrap, .silo-menu /* devon 5.7 added .silo-menu */
+	.content { /* v52 added */
+	padding: 20px;
+	}
+	
+	.procyber-site-footer,
+	.widget-wrap, .silo-menu { /* devon 5.7 added .silo-menu */
+	/* background-color: #e6e6e6; devon 5, turn off */
+	}
+	
+	/* v53 added below */
+	.procyber-site-footer {
+	padding: 40px 20px;
+	}
+
+
+	.sidebar .widget { /* v53 added */
+	margin-bottom: 0px; /* v53 normal version = 40px */
+	padding: 0px; 
+	}
+	
+	.generic-w-20pc {
+	width: 45%;
+	height: 45%;
+	}
+
+	.generic-w-30pc {
+	width: 45%;
+	height: 45%;
+	}
+
+	/* v52 added below */
+	.site-header {
+	background-size: 150%;
+	background-position: center 0px; 
+	height: 80px; /* devon 5, was 110px */
+	}
+	
+	/* devon 3, edit */
+	.header-image .site-title > a {
+	/* devon 5, turn off
+	background-position: center 20px;
+	background-size: 300px 50px; 
+	*/
+	}
+}	
+
+
+/* devon 5.5 added */
+@media screen and (max-width: 380px) { 
+img.alignleft,
+img.alignight {
+width: 100%;
+}
+}
+
+@media screen and (max-width: 360px) { 
+.header-image .site-title > a {
+background-size: 270px 47px; /* devon 5.2, was 270px 45px */
+background-position: center 23px; /* devon 5, added */
+}
+}
+/* v57 added below */
+@media screen and (max-width: 330px) { 
+.header-image .site-title > a {
+background-size: 270px 47px; /* devon 5.2, was 270px 45px */
+}
+}
+
+
+
+/* + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + */
+/* + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + */
+/* + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + */
+/* + + + + + + WNY CODE BELOW + + + + + + Added to Devon Magazine + + + + + + */
+/* + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + */
+/* + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + */
+/* + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + */
+
+
+
+  
+  /* ThNrU-v55 make delete button */ 
+  button.red { 
+  width: auto; 
+  height: auto; 
+  background: #ffffff; 
+  border-radius: 10px; 
+  -moz-border-radius: 10px; 
+  -webkit-border-radius: 10px; 
+  border: 3px solid #ff0000; 
+  padding: 7px 15px 7px 15px; 
+  font-family: "Helvetica Neue", Helvetica, 'Helvetica Neue', Arial, sans-serif; 
+  text-align: center; 
+  font-weight: 700; 
+  font-size: 87%; 
+  line-height: 14px; 
+  letter-spacing: 0px; 
+  color: #ff0000; 
+  box-shadow: 0px; 
+  } 
+  button.red:hover { 
+  color: #ff0000; 
+  text-decoration: underline; 
+  } 
+  button.delete { 
+  width: auto; 
+  height: auto; 
+  background: #ffffff; 
+  border-radius: 10px; 
+  -moz-border-radius: 10px; 
+  -webkit-border-radius: 10px; 
+  border: 3px solid #0066cc; 
+  padding: 7px 15px 7px 15px; 
+  font-family: "Helvetica Neue", Helvetica, 'Helvetica Neue', Arial, sans-serif; 
+  text-align: center; 
+  font-weight: 700; 
+  font-size: 87%; 
+  line-height: 14px; 
+  letter-spacing: 0px; 
+  color: #0066cc; 
+  box-shadow: 0px; 
+  } 
+  button.delete:hover { 
+  text-decoration: underline; 
+  } 
+  
+  /* ... styling for dropdown menu ... ... the word "select" is key to inputting the styling into the html button */ 
+  /* info from: http://cssdeck.com/labs/styling-select-box-with-css3 */ 
+  select, .nav-across-dropdown select { 
+  -webkit-font-smoothing: antialiased;
+  padding: 3px 8px 3px 8px; 
+  margin: 0;
+  -webkit-border-radius: 5px; 
+  -moz-border-radius: 5px; 
+  border-radius: 5px; /* devon 6.4 was 10px */
+  background: #ffffff; 
+  color: inherit; 
+  border: 2px solid #7cf3ff; /* devon 6.4 make cyan */
+  outline: none; 
+  display: inline-block; 
+  -webkit-appearance: none; 
+  -moz-appearance: none; 
+  appearance: none; 
+  cursor: pointer; 
+  vertical-align: bottom;  
+  } 
+  
+  /* FONT DIVs BELOW */ 
+  select, input[type=text], input[type=password], input[type=email], input[type=url], input[type=file] { 
+  font-family: "Helvetica Neue", Helvetica, 'Helvetica Neue', Arial, sans-serif; 
+  -webkit-font-smoothing: antialiased; 
+  font-size: 100%; 
+  line-height: 1.25em; 
+  font-weight: 400; 
+  color: #111111; /* devon 6.3.1 was inherit */
+  } 
+  .tags input[type=text] { 
+  width: 100%; 
+  } 
+  textarea, textarea#review { 
+  font-family: 'Handlee', Georgia, Times, serif; 
+  text-align: left; 
+  font-size: 112%; 
+  line-height: 1.25em; 
+  font-weight: 400; 
+  font-style: normal; 
+  color: #111111; 
+  padding: 10px; 
+  background: rgba(255, 255, 255, 1.0); /* devon 6.3.1 was light blue */ 
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.35), 0 0px 0px rgba(0, 0, 0, 1.0); 
+  -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.35), 0 0px 0px rgba(0, 0, 0, 1.0); 
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.35), 0 0px 0px rgba(0, 0, 0, 1.0); 
+  -webkit-font-smoothing: antialiased; 
+  height: 200px; 
+  width: 100%; 
+  box-sizing: border-box; 
+  border-top: 1px solid #777777; 
+  border-bottom: 1px solid #cccccc; 
+  border-left: 1px solid #cccccc; 
+  border-right: 1px solid #cccccc; 
+  -webkit-border-radius: 5px; 
+  -moz-border-radius: 5px; 
+  border-radius: 5px; 
+  margin-left: 0px; 
+  } 
+  
+  /* HEIGHT DIVs BELOW */ 
+  .nav-across-dropdown select { 
+  min-width: 200px; 
+  width: 100%; 
+  height: 35px; 
+  } 
+  select, input[type=text], input[type=password], input[type=email], input[type=url], input[type=file], input[type=tel] { 
+  height: 38px; /* devon 6.3.1 was 28px */
+  width: auto; 
+  margin-right: 5px; 
+  } 
+  
+  /* TEXT-INPUT-FIELDS DIVs BELOW */ 
+  /* ThNrU-v57 add type=tel below, for phone numbers */ 
+  input[type=text], input[type=password], input[type=email], input[type=url], input[type=file], input[type=tel] { 
+  padding: 0 5px 0 5px !important; 
+  background: rgba(255, 255, 255, 1.0); /* devon 6.3.1 was light blue */ 
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.35), 0 0px 0px rgba(0, 0, 0, 1.0); 
+  -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.35), 0 0px 0px rgba(0, 0, 0, 1.0); 
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.35), 0 0px 0px rgba(0, 0, 0, 1.0); 
+  color: #111111; 
+  -webkit-font-smoothing: antialiased; 
+  border-top: 1px solid #777777; 
+  border-bottom: 1px solid #cccccc; 
+  border-left: 1px solid #cccccc; 
+  border-right: 1px solid #cccccc; 
+  margin: 0px; 
+  } 
+  
+  /* Tables ----------------------------------- TherapyNearYou (Engage theme) ---------- */ 
+  
+ 
+  /* ------------------------------ -- Genesis - Engage > ABOVE -- ------------------------------ */ 
+  /* ------------------------------ ------------------------------ ------------------------------ */ 
+  /* ------------------------------ -- ThNrU "columns" > BELOW --- ------------------------------ */ 
+  p.cv-col-left { 
+  width: 20%; 
+  margin-right: 2%; 
+  font-weight: 700; 
+  color: #111111; 
+  } 
+  p.cv-col-right { 
+  width: 78%; 
+  font-weight: 400; 
+  color: inherit; 
+  } 
+  p.cv-col-left, p.cv-col-right { 
+  background: transparent; 
+  float: left; 
+  font-size: 87%; 
+  height: auto; 
+  } 
+  .dynamic-col-20pc-left { 
+  background: transparent; 
+  float: left; 
+  width: 20%; 
+  height: auto; 
+  } 
+  .dynamic-col-20pc-right { 
+  background: transparent; 
+  float: left; 
+  width: 78%; 
+  height: auto; 
+  margin-left: 2%; 
+  margin-bottom: 12px; 
+  } 
+  .static-col-auto { 
+  background: transparent; 
+  float: left; 
+  width: auto; 
+  height: auto; 
+  } 
+  .static-col-20pc-restricted-end, 
+  .static-col-20pc-restricted { 
+  background: transparent; 
+  width: 20%; 
+  height: auto; 
+  } 
+  .static-col-40pc-restricted { 
+  background: transparent; 
+  width: 40%; 
+  height: auto; 
+  } 
+  .static-col-20pc-restricted-end p, 
+  .static-col-20pc-restricted p, .static-col-40pc-restricted p { 
+  height: 30px; 
+  } 
+  .static-col-50pc-left { 
+  float: left; 
+  margin-right: 2% 
+  } 
+  .static-col-50pc-right { 
+  float: right; 
+  margin-left: 2%; 
+  } 
+  .static-col-50pc-left, .static-col-50pc-right { 
+  display: block; 
+  background: transparent; 
+  width: 46%; 
+  height: auto; 
+  padding: 0px; 
+  } 
+  .avatar-frame img { 
+  border: 1px solid #cccccc; 
+  padding: 40px; 
+  background: none; 
+  width: 100%; 
+  height: 100%; 
+  } 
+  .dynamic-col-20pc-left h4, .dynamic-col-20pc-left p, .dynamic-col-20pc-right p { 
+  margin-bottom: 0.5em; 
+  } 
+  .dynamic-col-30pc-left { 
+  background: transparent; 
+  float: left; 
+  width: 30%; 
+  height: auto; 
+  margin-right: 2%; 
+  } 
+  .dynamic-col-30pc-right { 
+  background: transparent; 
+  float: left; 
+  width: 68%; 
+  height: auto; 
+  margin-bottom: 12px; 
+  } 
+  .dynamic-col-30pc-left h4, .dynamic-col-30pc-left p, .dynamic-col-30pc-right p { 
+  margin-bottom: 0.5em; 
+  } 
+  .dynamic-col-25pc-right { 
+  width: 73%; 
+  margin-right: 2%; 
+  } 
+  .dynamic-col-25pc-left { 
+  width: 25%; 
+  } 
+  .search-results-title { 
+  background: transparent; 
+  display: block; 
+  width: 90%; 
+  min-height: 50px; 
+  margin: 0 0 20px 0 !important; 
+  border-bottom: #cccccc solid 1px; 
+  } 
+  .search-results-title h3 { 
+  line-height: 1.20em; 
+  padding: 0; 
+  margin: 0 0 4px 0; 
+  } 
+  .search-results-title p::before { 
+  content: "Location: "; 
+  font-weight: 700; 
+  color: #111111; 
+  } 
+  .search-results-title p { 
+  color: inherit; 
+  font-weight: inherit; 
+  font-family: "Helvetica Neue", Helvetica, 'Helvetica Neue', Arial, sans-serif; 
+  font-size: 75%; 
+  line-height: 1.25em; 
+  padding-bottom: 5px; 
+  margin: 0px !important; 
+  } 
+  .thnru-avatar-mini { 
+  float: left; 
+  background: transparent; 
+  width: 40px; 
+  height: 65px; 
+  margin: 0 7px 0 0; 
+  } 
+  /* ------------------------------ -- ThNrU "columns" > ABOVE --- ------------------------------ */ 
+  /* ------------------------------ ------------------------------ ------------------------------ */ 
+  /* ------------------------------ - ThNrU "Containers" > BELOW - ------------------------------ */ 
+  .basicuser-container { 
+  background: #f0ecd9; 
+  width: 100%; 
+  height: auto; 
+  padding: 20px; 
+  overflow: hidden; 
+  } 
+  .feedback-container { 
+  width: auto; 
+  height: auto; 
+  padding: 0px; 
+  margin: 0px; 
+  display: block; 
+  overflow: hidden; 
+  } 
+  .feedback-container h2 { 
+  margin: 0 0 4px 0; 
+  } 
+  .feedback-container h3 { 
+  font-size: 87%; 
+  color: #111111; 
+  font-weight: 700; 
+  margin: 0 0 1px 0; 
+  } 
+  .feedback-container p { 
+  background: transparent; 
+  float: left; 
+  font-size: 75%; 
+  line-height: 1.25em; 
+  color: inherit; 
+  height: auto; 
+  } 
+  .feedback-container p b { 
+  font-size: inherit; 
+  color: #ff0000; 
+  font-weight: inherit; 
+  } 
+  .feedback-container p strong { 
+  color: #111111; 
+  font-weight: 700; 
+  } 
+  .generic-container { 
+  overflow: hidden; 
+  } 
+  #dormant-field-container { 
+  float: none; 
+  width: auto; 
+  } 
+  #dormant-width-100pc { 
+  width: auto; 
+  } 
+  
+  .dormant-select-container { 
+  float: left; 
+  width: auto; 
+  /* devon wny 3, aded below */
+	margin: 0 10px 10px 0;
+  display: inline-block;
+  } 
+
+  
+  p.approved { 
+  } 
+  p.edit-this { 
+  font-family: 'Handlee', Georgia, Times, serif; 
+  font-size: 125%; 
+  } 
+  .border-box { 
+  clear: both; 
+  border: 1px solid #cccccc; 
+  border-radius: 5px; 
+  padding: 10px; 
+  width: auto; 
+  height: auto; 
+  margin: 13px 0 13px 0; 
+  overflow: hidden; 
+  } 
+  .visible-websites, .visible-smartphones { 
+  position: absolute; 
+  line-height: 1.00em; 
+  } 
+  .visible-websites { 
+  display: block; 
+  top: 45px; 
+  } 
+  .visible-websites p, .visible-smartphones p { 
+  font-size: 87%; 
+  line-height: 1.00em; 
+  text-align: left; 
+  } 
+  .visible-smartphones { 
+  display: none; 
+  top: 10px; 
+  } 
+  .genesis-before-header { 
+  display: block; 
+  width: 100%; 
+  height: 35px; 
+  background: #78ddff; 
+  padding: 10px; 
+  margin: 0 auto; 
+  } 
+  .genesis-before-header p { 
+  text-align: center; 
+  color: white; 
+  font-size: 13px; 
+  line-height: 1.35em; 
+  padding: 0px; 
+  margin: 0px; 
+  font-weight: 700; 
+  opacity: 1.00; 
+  filter: Alpha(opacity=80); 
+  } 
+  .admin-eyes-only { 
+  border: 1px solid #ddd; 
+  padding: 0.75em; 
+  margin: 0.25em 0 0.5em 0; 
+  background: #ddffdd; 
+  clear: both; 
+  } 
+  .wny-button-container { 
+  display: block; 
+  width: 100%; 
+  height: 64px; 
+  background: none; 
+  border: 0px; 
+  padding: 0px; 
+  } 
+  .wny-cropper-container { 
+  max-width: 800px; 
+  min-width: 280px; 
+  height: auto; 
+  background: white; 
+  border: 1px solid #cccccc; 
+  padding: 10px; 
+  margin: 0 auto; 
+  } 
+  .wny-cropper-main { 
+  width: 580px; 
+  height: auto; 
+  background: black; 
+  border: 0px solid #cccccc; 
+  padding: 0px; 
+  margin: 0 0 20px 0; 
+  display: inline-block; 
+  } 
+  .wny-cropper-preview-container { 
+  width: 180px; 
+  height: auto; 
+  float: right; 
+  margin: 0 0 20px 0; 
+  display: inline-block; 
+  } 
+  .wny-cropper-preview-big, .wny-cropper-preview-small { 
+  float: left; 
+  background: black; 
+  border: 0px solid #cccccc; 
+  padding: 0px; 
+  margin: 0 20px 20px 0; 
+  } 
+  .wny-cropper-preview-big { 
+  width: 143px; 
+  height: 143px; 
+  } 
+  .wny-cropper-preview-small { 
+  width: 60px; 
+  height: 60px; 
+  } 
+  .wny-cropper-preview-big img { 
+  } 
+  .wny-cropper-preview-small img { 
+  } 
+  /* ------------------------------ - ThNrU "Containers" > ABOVE - ------------------------------ */ 
+  /* ------------------------------ ------------------------------ ------------------------------ */ 
+  /* ------------------------------ ThNrU "Special text" > BELOW ------------------------------ */ 
+  .search-results-title { 
+  background: transparent; 
+  display: block; 
+  width: 90%; 
+  min-height: 50px; 
+  margin: 0 0 20px 0 !important; 
+  border-bottom: #cccccc solid 1px; 
+  } 
+  .search-results-title h3 { 
+  line-height: 1.20em; 
+  padding: 0; 
+  margin: 0 0 3px 0; 
+  } 
+  .search-results-title p::before { 
+  content: "Location: "; 
+  font-weight: 700; 
+  color: #111111; 
+  } 
+  .search-results-title p { 
+  color: inherit; 
+  font-weight: inherit; 
+  font-family: "Helvetica Neue", Helvetica, 'Helvetica Neue', Arial, sans-serif; 
+  font-size: 12px; 
+  line-height: 1.25em; 
+  padding-bottom: 5px; 
+  margin: 0px !important; 
+  } 
+  .search-results-title table { 
+  margin: 0px; 
+  } 
+  .search-results-title table tbody td { 
+  padding: 0px; 
+  border: none!important; 
+  } 
+  .search-results-title table tbody td hr { 
+  padding: 0px; 
+  } 
+  .search-results-title table tbody { 
+  border: none!important; 
+  } 
+  .search-results-title { 
+  margin: 0px; 
+  } 
+  .thnru-avatar-mini { 
+  float: left; 
+  background: #eeeeee; 
+  width: 40px; 
+  height: 40px; 
+  margin: 0 7px 0 0; 
+  } 
+  .thnru-avatar { 
+  float: left; 
+  background: #eeeeee; 
+  width: 80px; 
+  height: 80px; 
+  margin: 0 10px 10px 0; 
+  } 
+  p.mini-text-wordspace { 
+  color: inherit; 
+  font-family: "Helvetica Neue", Helvetica, 'Helvetica Neue', Arial, sans-serif; 
+  font-size: 75%; 
+  line-height: 1.25em; 
+  padding: 0px; 
+  margin: 0px !important; 
+  font-weight: inherit; 
+  } 
+  p.mini-text-wordspace a { 
+  padding-left: 5px; 
+  } 
+  p.mini-text-wordspace b { 
+  padding-left: 5px; 
+  font-weight: 700; 
+  color: #111111; 
+  } 
+  h1.basicuser-title { 
+  color: #111111; 
+  font-family: "Helvetica Neue", Helvetica, 'Helvetica Neue', Arial, sans-serif; 
+  font-weight: 700; 
+  line-height: 1.2em; 
+  margin: 0 0 8px 0; 
+  font-size: 28px; 
+  } 
+  h1.basicuser-title::before { 
+  content: url('/image-files/avatars/avatar-basicuser-20x20.png'); 
+  padding-right: 5px; 
+  height: auto; 
+  } 
+  h1.basicuser-title b { 
+  color: #9f8f3c; 
+  } 
+  p.basicuser-name { 
+  background: transparent url('/image-files/avatars/avatar-basicuser-20x20.png') left 1px no-repeat; 
+  background-size: 15px 15px; 
+  font-weight: bold; 
+  color: #111111; 
+  padding-left: 19px; 
+  } 
+  p.thnru-helped-with { 
+  color: #111111; 
+  font-weight: 700; 
+  font-family: "Helvetica Neue", Helvetica, 'Helvetica Neue', Arial, sans-serif; 
+  font-size: 12px; 
+  line-height: 1.25em; 
+  padding-bottom: 5px; 
+  margin: 0; 
+  } 
+  p.thnru-mini-text { 
+  color: inherit; 
+  font-weight: inherit; 
+  font-family: "Helvetica Neue", Helvetica, 'Helvetica Neue', Arial, sans-serif; 
+  font-size: 12px; 
+  line-height: 1.25em; 
+  padding-bottom: 5px; 
+  margin: 0px !important; 
+  } 
+  p.thnru-mini-text strong { 
+  color: #111111; 
+  font-weight: 700; 
+  } 
+  p.thnru-mini-text a { 
+  margin: 0px !important; 
+  } 
+  p.thnru-small-text { 
+  color: inherit; 
+  font-weight: inherit; 
+  font-family: "Helvetica Neue", Helvetica, 'Helvetica Neue', Arial, sans-serif; 
+  font-size: 87%; 
+  line-height: 1.25em; 
+  padding-bottom: 5px; 
+  margin: 0px !important; 
+  } 
+  p.thnru-small-text a { 
+  margin: 0px !important; 
+  } 
+  p.thnru-large-text { 
+  color: inherit; 
+  font-weight: inherit; 
+  font-family: "Helvetica Neue", Helvetica, 'Helvetica Neue', Arial, sans-serif; 
+  font-size: 112%; 
+  line-height: 1.25em; 
+  padding-bottom: 5px; 
+  margin: 0px !important; 
+  } 
+  span.black-bold { 
+  color: #111111; 
+  font-weight: 700; 
+  } 
+  /* ThNrU-75 added below to make words "Click on a NUMBER below, to open the service" */ 
+  span.blue-bold, 
+  span.blue-bold-tick { 
+  color: #0066cc; 
+  font-weight: 700; 
+  } 
+  span.blue-bold-tick:after { 
+  content: url("/image-files/sprites/tick-blue-sm.png"); 
+  padding: 0 0 0 3px; 
+  } 
+  .dynamic-block { 
+  display: block; 
+  padding: 0px; 
+  margin: 0px; 
+  width: auto; 
+  height: auto; 
+  float: left; 
+  } 
+  .thumbs-up { 
+  display: block; 
+  padding: 0 0 0 4px; 
+  margin: 0px; 
+  width: auto; 
+  height: auto; 
+  float: left; 
+  } 
+  .thumbs-down { 
+  display: block; 
+  padding: 0 0 0 4px; 
+  margin: 3px 0 0 0; 
+  width: auto; 
+  height: auto; 
+  float: left; 
+  } 
+  .dynamic-top-margin-w550 { 
+  margin-top: 0px; 
+  } 
+  /* ---------------------- -------- ThNrU "Special text" > ABOVE ------- ----------------------- */ 
+  /* ---------------------- --------------------------------------------- ----------------------- */ 
+  /* ---------------------- ThNrU "Added to Modular Custom CSS" > BELOW ----------------------- */ 
+  .cleanlogin-container { 
+  margin: 20px auto 0px auto; 
+  max-width: 100%; 
+  position: relative; 
+  overflow: hidden; 
+  padding: 0 20% 0 20%; 
+  -webkit-box-shadow: 0px 0px 0px rgba(0, 0, 0, 0); 
+  box-shadow: 0px 0px 0px rgba(0, 0, 0, 0); 
+  border-radius: 0px; 
+  border: 0px solid #ddd; 
+  } 
+  .cleanlogin-container h4 { 
+  margin-top: 0; 
+  text-align: center; 
+  font-size: 25px; 
+  font-weight: 700; 
+  margin-bottom: 20px; 
+  color: #9f8f3c; 
+  } 
+  .cleanlogin-container h4>small { 
+  margin-top: 5px; 
+  font-size: 20px; 
+  font-weight: 400; 
+  font-style: inherit; 
+  display: block; 
+  } 
+  .cleanlogin-form a.cleanlogin-form-login-link, .cleanlogin-form a.cleanlogin-form-pwd-link, .cleanlogin-preview a.cleanlogin-preview-edit-link { 
+  text-align: left; 
+  float: left; 
+  text-decoration: none; 
+  } 
+  .cleanlogin-form a.cleanlogin-form-login-link:hover, .cleanlogin-form a.cleanlogin-form-pwd-link:hover, .cleanlogin-preview a.cleanlogin-preview-edit-link:hover, .cleanlogin-preview-top a:hover { 
+  /* v103.4 added */ 
+  text-decoration: underline; 
+  } 
+  .cleanlogin-field-remember { 
+  color: #555555; 
+  float: left; 
+  text-align: left; 
+  } 
+  .cleanlogin-field-remember b { 
+  font-weight: 400; 
+  font-size: 75%; 
+  line-height: 0.00em; 
+  } 
+  .cleanlogin-preview-top { 
+  padding-bottom: 36px; 
+  height: 24px; 
+  } 
+  .cleanlogin-preview-top a { 
+  text-align: center; 
+  } 
+  .author_pic_cp_right { 
+  margin: 10px 0 10px 0; 
+  } 
+  .author_pic_cp_right a { 
+  margin: 0 0 15px 0; 
+  } 
+  @media only screen and (max-width: 770px) { 
+  input.cleanlogin-field, .cleanlogin-form a.cleanlogin-form-pwd-link { 
+  text-decoration: underline; 
+  } 
+  } 
+  @media screen and (max-width: 440px) { 
+  .cleanlogin-container { 
+  padding: 0 10% 0 10%; 
+  } 
+  } 
+  @media screen and (max-width: 380px) { 
+  .cleanlogin-container { 
+  padding: 0 0% 0 0%; 
+  } 
+  } 
+  /* ------------------------------ ThNrU "Added to Modular Custom CSS" > ABOVE ------------------------------ */ 
+  /* ------------------------------ ------------------------------------------- ------------------------------ */ 
+  /* ------------------------------ Plugin code (in STYLE-SHEET only) > BELOW ------------------------------ */ 
+  #infobubble-content .place-title { 
+  border: 0px solid #FFF; 
+  font-family: Roboto, Arial, sans-serif; 
+  font-size: 100%; 
+  line-height: 21px; 
+  font-weight: 700; 
+  min-height: 21px; 
+  white-space: normal; 
+  padding-right: 20px; 
+  margin-bottom: 0 !important; 
+  } 
+  #infobubble-content p { 
+  font-size: 75%; 
+  margin: 0; 
+  color: #2C2C2C; 
+  } 
+  .place-description { 
+  font-size: 87%; 
+  line-height: 1.25em; 
+  } 
+  /* ------------------------------ Plugin code (in STYLE-SHEET only) > ABOVE ------------------------------ */ 
+  /* ------------------------------ ------------------------------ ------------------------------ */ 
+  /* ------------------------------ Avatar code (in STYLE-SHEET only) > BELOW ------------------------------ */ 
+  .author_pic_cp { 
+  display: block; 
+  background: transparent; 
+  width: 200px; 
+  height: 200px; 
+  float: left; 
+  margin: 10px 10px 10px 0; 
+  } 
+  .author_pic_cp img { 
+  width: 200px; 
+  height: 200px; 
+  } 
+  .author_pic_cp_right { 
+  display: block; 
+  background: transparent; 
+  width: auto; 
+  height: 200px; 
+  float: left; 
+  margin: 10px 0px 10px 10px; 
+  } 
+  .author_pic_cp_right p { 
+  text-align: left; 
+  } 
+  .author_pic_cp_right p a { 
+  display: block; 
+  } 
+  @media screen and (max-width: 415px) { 
+  .author_pic_cp { 
+  background: transparent; 
+  width: 220px; 
+  height: 220px; 
+  float: left; 
+  margin: 10px 0 10px 0; 
+  } 
+  .author_pic_cp img { 
+  } 
+  .author_pic_cp_right { 
+  background: transparent; 
+  width: auto; 
+  height: auto; 
+  float: left; 
+  margin: 0 0 10px 0; 
+  } 
+  } 
+  #profile_upload_profile_croppable { 
+  width: 558px; 
+  } 
+  #cropper_popup { 
+  padding: 20px; 
+  border: 2px solid black; 
+  width: 650px; 
+  background-color: white; 
+  height: 650px; 
+  overflow-y: auto; 
+  } 
+  .open_cropper_popup { 
+  position: fixed; 
+  top: 25px; 
+  display: block !important; 
+  visibility: visible !important; 
+  } 
+  a#close_crop_popup { 
+  margin-left: 80%; 
+  } 
+  #cropping_tool_link { 
+  display: none; 
+  } 
+  } 
+  /* ------------------------------ Avatar code (in STYLE-SHEET only) > ABOVE ------------------------------ */ 
+  /* ------------------------------ ------------------------------ ------------------------------ */ 
+  /* ------------------------------ ThNrU "Feedback" code > BELOW ------------------------------ */ 
+ /* ThNrU-v79 restructured and added "-overflow" below (based on p.tags) */ 
+  #testimonial-intro-text-overflow, #testimonial-intro-text { 
+  width: auto; 
+  height: auto; 
+  clear: both; 
+  font-size: 75%; 
+  } 
+  #testimonial-intro-text-overflow p, #testimonial-intro-text p { 
+  color: #555555; 
+  font-family: "Helvetica Neue", Helvetica, 'Helvetica Neue', Arial, sans-serif; 
+  font-size: inherit; 
+  line-height: 1.25em; 
+  padding: 0 0 10px 0; 
+  margin: 0px !important; 
+  } 
+  #testimonial-intro-text-overflow p a, #testimonial-intro-text p a { 
+  background: transparent url('/image-files/avatars/avatar-basicuser-sm.png') left center no-repeat; 
+  color: #0066cc; 
+  font-family: "Helvetica Neue", Helvetica, 'Helvetica Neue', Arial, sans-serif; 
+  font-size: inherit; 
+  line-height: 1.25em; 
+  font-weight: 700; 
+  display: block; 
+  float: left; 
+  } 
+  #testimonial-intro-text p b, 
+  #testimonial-intro-text p a { 
+  padding-left: 13px; 
+  margin-right: 5px; 
+  } 
+  #testimonial-intro-text-overflow p a { 
+  padding: 4px 0 4px 13px; 
+  margin-right: 9px; 
+  } 
+ #testimonial-intro-text p b { 
+  background: transparent url('/image-files/avatars/avatar-basicuser-sm.png') left center no-repeat; 
+  color: #111111; 
+  font-size: inherit; 
+  font-weight: 700; 
+  } 
+  #testimonial-intro-text p strong { 
+  font-weight: 700; 
+  color: #111111; 
+  } 
+ .thnru-review-box-sm { 
+  width: 100%; 
+  height: 100%; 
+  background: #f7f7f7; 
+  border-radius: 3px; 
+  -moz-border-radius: 3px; 
+  -webkit-border-radius: 3px; 
+  border-top: #eeeeee solid 1px; 
+  border-left: #dddddd solid 1px; 
+  border-right: #cccccc solid 1px; 
+  border-bottom: #cccccc solid 1px; 
+  padding: 4px 7px 9px 7px; 
+  font-size: 12px; 
+  } 
+  .thnru-review-box-sm hr { 
+  width: 100%; 
+  height: 1px; 
+  background: #cccccc; 
+  border: none; 
+  outline: none; 
+  padding: 0px !important; 
+  margin: 1px 0 2px 0 !important; 
+  } 
+  .thnru-review-box-sm p { 
+  font-family: "Helvetica Neue", Helvetica, 'Helvetica Neue', Arial, sans-serif; 
+  text-align: left; 
+  font-size: inherit; 
+  font-weight: 400; 
+  line-height: 1.25em; 
+  color: #111111; 
+  letter-spacing: 0px; 
+  margin: 0px !important; 
+  padding: 3px 0 0 0; 
+  } 
+  .thnru-review-box-sm b { 
+  background: transparent url('/image-files/avatars/avatar-basicuser-sm.png') left center no-repeat; 
+  font-family: "Helvetica Neue", Helvetica, 'Helvetica Neue', Arial, sans-serif; 
+  text-align: left; 
+  font-size: inherit; 
+  font-weight: 700; 
+  line-height: 1.25em; 
+  color: #111111; 
+  letter-spacing: 0px; 
+  padding: 0 0 0 13px; 
+  } 
+  /* v116.3 add 'orange-mini' below, which was only in @media before */
+ .thnru-button-orange, .thnru-button-orange-mini { float: right; background: #ddffff; border-radius: 10px; -moz-border-radius: 10px; -webkit-border-radius: 10px; height: auto; border: 3px solid #00dcff; margin: 10px 0 0 0; font-family: "Helvetica Neue", Helvetica, 'Helvetica Neue', Arial, sans-serif; text-align: center; font-weight: 700; letter-spacing: 0px; color: #0066cc; box-shadow: 0px; } 
+  .thnru-button-orange { font-size: 14px; line-height: 14px; padding: 7px 5px 7px 5px; width: 100%; }
+ .thnru-button-orange-mini { font-size: 11.5px; line-height: 11.5px; padding: 6px 10px 5px 10px; /* v116.4 edited */ width: 100%; }
+ .thnru-button-orange a, .thnru-button-orange-mini a { color: #0066cc; } 
+  /* v116.3 add 'orange-mini' above, which was only in @media before */
+ .inside-user-feedback-v34 { background: #ffffff; border-radius: 10px; float: left; width: 100%; height: auto; border: 5px solid #cccccc; padding: 15px; margin: 15px 0 10px 0; font-size: 75%; line-height: 15px; } 
+  .inside-user-feedback-v34 h4 { font-size: inherit; line-height: 1.20em; padding: 0; margin: 0 0 4px; } 
+  .inside-user-feedback-v34 img { width: 40px; height: 40px; margin-right: 5px; } 
+  .inside-user-feedback-v34 hr { 
+  padding: 0px; 
+  } 
+  .testimonial-text { 
+  clear: both; 
+  background: none; 
+  border-left: 0px solid #ccc; 
+  margin: 5px 0 5px 0; 
+  /* ThNrU-v38 was 5px 5px 5px 0 */ 
+  padding: 0px; 
+  width: auto; 
+  } 
+  .testimonial-text:before { 
+  display: block; 
+  color: #ccc; 
+  content: "\201C"; 
+  font-size: 80px; 
+  line-height: 0.1em; 
+  font-style: italic; 
+  font-family: "Helvetica", Helvetica, serif; 
+  left: -10px; 
+  position: relative; 
+  top: 20px; 
+  height: 0px; 
+  } 
+  .testimonial-text:after { 
+  display: block; 
+  color: #ccc; 
+  content: "\201D"; 
+  font-size: 80px; 
+  line-height: 0.1em; 
+  font-style: italic; 
+  font-family: "Helvetica", Helvetica, serif; 
+  float: right; 
+  position: relative; 
+  top: 0px; 
+  height: 0px; 
+  margin-right: 10px; 
+  } 
+  .testimonial-text p { 
+  background: none; 
+  display: inline-block; 
+  font-family: 'Handlee', Georgia, Times, serif; 
+  font-size: 20px; 
+  font-style: normal; 
+  padding: 0 30px 0 30px; 
+  font-weight: inherit; 
+  color: #222222; 
+  } 
+  .thnru-points { 
+  width: auto; 
+  height: auto; 
+  margin: -2px 0 2px 0; 
+  padding: 0px; 
+  } 
+  .thnru-points a { 
+  background: transparent url('/image-files/sprites/tick-blue-sm.png') right top no-repeat; 
+  padding: 0 15px 0 0; 
+  font-family: "Helvetica Neue", Helvetica, 'Helvetica Neue', Arial, sans-serif; 
+  text-align: left; 
+  font-size: 20px; 
+  font-weight: 700; 
+  line-height: 1.25em; 
+  letter-spacing: 0px; 
+  margin: 0px; 
+  } 
+  /* ThNrU-v35 add "Ticks" below ... ThNrU v34, added below */ 
+  p.tags { 
+  background: transparent url('/image-files/sprites/tick-blue-tags.png') right top no-repeat; 
+  color: #111111; 
+  font-family: "Helvetica Neue", Helvetica, 'Helvetica Neue', Arial, sans-serif; 
+  font-size: inherit; 
+  line-height: 1.0em; 
+  /* ThNrU v23, was 14px */ 
+  font-weight: 700 !important; 
+  padding: 4px 12px 4px 0px; 
+  /* ThNrU v35, was 4px 8px 4px 0 */ 
+  float: left; 
+  display: block; 
+  height: 25px !important; 
+  margin-right: 9px !important; 
+  margin-bottom: 0px !important; 
+  /* ThNrU-v54 added */ 
+  } 
+  /* + + + + + + ThNrU-v62 edited "below" to make special dropdown graphics + + + + + + */ 
+ /* ThNrU-v46, BELOW "sub-list" for Endorsements */ 
+  .skills-sublist, .skills-sublist-basicusers { 
+  text-align: left; 
+  display: block; 
+  width: 100%; 
+  background: #ffffdd; 
+  border-top: #eeeeee solid 0px; 
+  border-left: #dddddd solid 1px; 
+  border-right: #dddddd solid 1px; 
+  border-bottom: #cccccc solid 1px; 
+  padding: 10px 10px 0px 10px; 
+  color: #333333 !important; 
+  margin-top: 0px; 
+  margin-bottom: 10px; 
+  border-bottom-left-radius: 3px; 
+  border-bottom-right-radius: 3px; 
+  } 
+  .skills-sublist ul, .skills-sublist-basicusers ul { 
+  margin: 0px; 
+  padding-left: 0px !important; 
+  } 
+  .skills-sublist ul li { 
+  font-size: 100%; 
+  font-family: "Helvetica Neue", Helvetica, 'Helvetica Neue', Arial, sans-serif; 
+  line-height: 1.25em; 
+  font-weight: 700; 
+  list-style-type: none !important; 
+  height: 20px !important; 
+  padding: 0 !important; 
+  margin: 0 0 10px 0; 
+  } 
+  .skills-sublist ul li a { 
+  margin: 0 0 0 16px; 
+  } 
+  .skills-sublist-basicusers ul li { 
+  background: transparent url('/image-files/avatars/avatar-basicuser-sm.png') left 3px no-repeat; 
+  font-size: 75%; 
+  font-family: "Helvetica Neue", Helvetica, 'Helvetica Neue', Arial, sans-serif; 
+  line-height: 1.25em; 
+  font-weight: 700; 
+  list-style-type: none !important; 
+  height: 20px !important; 
+  padding: 0 0 0 9px !important; 
+  margin: 0 0 10px 0; 
+  } 
+  /* ThNrU-v46, ABOVE "sub-list" for Endorsements */ 
+ .skills-narrow-feedback { 
+  display: block; 
+  font-family: "Helvetica Neue", Helvetica, 'Helvetica Neue', Arial, sans-serif; 
+  font-size: 75%; /* Edited by TB, 08-Feb-2018, was 14px */ 
+  line-height: 1.25em; 
+  } 
+  .skills-wide { 
+  } 
+  /* ThNrU-v62 edited "above" to make special dropdown graphics */ 
+  .skills-narrow, .skills-narrow-dropdown, .skills-wide, .skills-wide-dropdown { 
+  display: block; 
+  font-family: "Helvetica Neue", Helvetica, 'Helvetica Neue', Arial, sans-serif; 
+  font-size: 18px; 
+  line-height: 1.25em; 
+  } 
+  .skills-narrow-feedback, 
+  .skills-narrow, .skills-narrow-dropdown { 
+  font-weight: 700; 
+  float: right; 
+  text-align: right; 
+  width: 15%; 
+  /* edited by TB, 8-Feb-2018. Was 90px */ 
+  } 
+  .skills-wide, .skills-wide-dropdown { 
+  font-weight: 400; 
+  text-align: left; 
+  width: -moz-calc(100% - 90px); 
+  width: -webkit-calc(100% - 90px); 
+  width: -o-calc(100% - 90px); 
+  width: calc(100% - 90px); 
+  } 
+  .skills-narrow-feedback ul, 
+  .skills-narrow ul, .skills-narrow-dropdown ul, .skills-wide ul, .skills-wide-dropdown ul { 
+  list-style-type: none !important; 
+  margin: 0px; 
+  padding-left: 0px !important; 
+  } 
+  .skills-narrow ul li, .skills-narrow-dropdown ul li, .skills-wide ul li, .skills-wide-dropdown ul li { 
+  list-style-type: none !important; 
+  min-height: 35px !important; 
+  padding-top: 5px !important; 
+  color: #333333 !important; 
+  } 
+  .skills-narrow ul li, .skills-wide ul li { 
+  margin: 0 0 0px 0; 
+  margin-top: 10px; 
+  } 
+  .skills-narrow-dropdown ul li, .skills-wide-dropdown ul li { 
+  margin: 0; 
+  } 
+  .skills-narrow-feedback ul li { 
+  list-style-type: none !important; 
+  height: 35px !important; 
+  padding-top: 8px !important; 
+  margin: 0 0 10px 0; 
+  color: #0066cc !important; 
+  } 
+  .skills-wide ul li, .skills-wide-dropdown ul li { 
+  background: #f7f7f7; 
+  border-top: #eeeeee solid 1px; 
+  border-left: #dddddd solid 1px; 
+  border-right: #cccccc solid 0px; 
+  padding-left: 10px; 
+  height: 35px; 
+  } 
+  .skills-wide ul li { 
+  border-bottom: #cccccc solid 1px; 
+  border-top-left-radius: 3px; 
+  border-bottom-left-radius: 3px; 
+  border-top-right-radius: 0px; 
+  border-bottom-right-radius: 0px; 
+  } 
+  .skills-wide-dropdown ul li { 
+  border-bottom: #eeeeee solid 1px; 
+  border-top-left-radius: 3px; 
+  border-bottom-left-radius: 0px; 
+  border-top-right-radius: 0px; 
+  border-bottom-right-radius: 0px; 
+  } 
+  /* ThNrU-v48 add space left of "plus symbol" add.gif */ 
+  .skills-narrow-feedback ul li img, .skills-wide ul li img, .skills-wide-dropdown ul li img { 
+  padding-left: 5px; 
+  } 
+  .skills-narrow ul li, .skills-narrow-dropdown ul li { 
+  background: #ffffcc; 
+  border-top: #eeeeee solid 1px; 
+  border-left: #eeeeee solid 0px; 
+  border-right: #cccccc solid 1px; 
+  padding-right: 7px; 
+  } 
+  .skills-narrow ul li { 
+  border-bottom: #cccccc solid 1px; 
+  border-top-right-radius: 3px; 
+  border-bottom-right-radius: 3px; 
+  } 
+  .skills-narrow-dropdown ul li { 
+  border-bottom: #cccccc solid 0px; 
+  border-top-right-radius: 3px; 
+  border-bottom-right-radius: 0px; 
+  } 
+  /* ThNrU-v62 edited "above" to make special dropdown graphics */ 
+  .skills-narrow ul li:after, .skills-narrow-dropdown ul li:after { 
+  content: url("/image-files/sprites/tick-blue-sm.png"); 
+  padding: 0 0 0 3px; 
+  } 
+ /* ThNrU-v62 edited "above" to make special dropdown graphics */ 
+ .skills-narrow-feedback ul li { 
+  background: #ddffff; 
+  border-top-right-radius: 3px; 
+  border-bottom-right-radius: 3px; 
+  border-top: cyan solid 1px; 
+  border-left: cyan solid 0px; 
+  border-right: cyan solid 1px; 
+  border-bottom: cyan solid 1px; 
+  padding-right: 7px; 
+  } 
+  .skills-narrow-feedback ul li a { 
+  color: #ffffff; 
+  } 
+  .endorse-pill, .endorse-pill-dropdown { 
+  min-height: 35px !important; 
+  width: 100%; 
+  padding: 5px 7px 5px 8px !important; 
+  background: #f7f7f7 url('/image-files/sprites/edge-yellow-w90.gif') right top repeat-y; 
+  border-top: #eeeeee solid 1px; 
+  border-left: #dddddd solid 1px; 
+  border-right: #cccccc solid 1px; 
+  display: block; 
+  overflow: auto; 
+  } 
+  .endorse-pill { 
+  border-radius: 3px; 
+  border-bottom: #cccccc solid 1px; 
+  margin: 0 0 10px 0; 
+  } 
+  .endorse-pill-dropdown { 
+  border-top-left-radius: 3px; 
+  border-top-right-radius: 3px; 
+  border-bottom-left-radius: 0px; 
+  border-bottom-right-radius: 0px; 
+  border-bottom: #dddddd solid 1px; 
+  margin: 0; 
+  } 
+  p.endorse-number-cp, 
+  p.endorse-number { 
+  font-weight: 700; 
+  float: right; 
+  width: 90px; 
+  text-align: right; 
+  } 
+  p.endorse-number:after { 
+  content: url("/image-files/sprites/tick-blue-sm.png"); 
+  padding: 0 0 0 3px; 
+  } 
+  p.endorse-skill { 
+  font-weight: 400; 
+  float: left; 
+  width: -moz-calc(100% - 90px); 
+  width: -webkit-calc(100% - 90px); 
+  width: -o-calc(100% - 90px); 
+  width: calc(100% - 90px); 
+  text-align: left; 
+  } 
+  p.endorse-number, p.endorse-skill { 
+  line-height: 1.25em; 
+  font-size: 18px; 
+  margin: 0px !important; 
+  color: #333333 !important; 
+  } 
+  p.endorse-number-cp img, 
+  p.endorse-skill img { 
+  padding-left: 5px; 
+  } 
+  p.endorse-number-cp { 
+  line-height: 1.25em; 
+  font-size: 15px; 
+  margin: 0px !important; 
+  color: #333333 !important; 
+  padding: 3px 0 0 0; 
+  } 
+ .endorse-sublist, .endorse-sublist-basicusers { 
+  text-align: left; 
+  display: block; 
+  width: 100%; 
+  background: #f0feff; 
+  border-top: #eeeeee solid 0px; 
+  border-left: #dddddd solid 1px; 
+  border-right: #cccccc solid 1px; 
+  border-bottom: #cccccc solid 1px; 
+  padding: 10px 10px 0px 10px; 
+  margin-top: 0px; 
+  margin-bottom: 10px; 
+  border-bottom-left-radius: 3px; 
+  border-bottom-right-radius: 3px; 
+  overflow: auto; 
+  } 
+  .endorse-sublist p { 
+  min-height: 28px; 
+  padding: 0 0 5px 0 !important; 
+  margin: 0 0 10px 0px; 
+  display: block; 
+  } 
+  .endorse-sublist-basicusers p { 
+  min-height: 20px !important; 
+  background: transparent url('/image-files/avatars/avatar-basicuser-sm.png') left 3px no-repeat; 
+  padding: 0 0 8px 13px !important; 
+  margin: 0 0 10px 0; 
+  } 
+ .endorse-sublist p, .endorse-sublist-basicusers p { 
+  overflow: auto; 
+  font-size: 75%; 
+  font-family: "Helvetica Neue", Helvetica, 'Helvetica Neue', Arial, sans-serif; 
+  line-height: 1.25em; 
+  font-weight: 400; 
+  border-bottom: #c4e7ea solid 1px; 
+  } 
+ .endorse-sublist-basicusers p a { 
+  font-weight: 700; 
+  padding-right: 3px; 
+  } 
+  .endorse-sublist p a { 
+  font-weight: 700; 
+  font-size: 15px; 
+  padding-right: 6px; 
+  } 
+  .endorse-sublist p img { 
+  float: left; 
+  width: 24px; 
+  height: 24px; 
+  margin: 0 7px 0 0; 
+  padding: 0; 
+  } 
+ /* ------------------------------ ThNrU "Feedback" code > ABOVE ------------------------------ */ 
+  /* ------------------------------ ------------------------------ ------------------------------ */ 
+  /* ------------------------------ ---- Generic code > BELOW ---- ------------------------------ */ 
+ .vanishing-line hr { 
+  display: none; 
+  } 
+  .text-align-left { 
+  text-align: left; 
+  } 
+  .text-align-right { 
+  text-align: right; 
+  } 
+  .text-align-center { 
+  text-align: center; 
+  } 
+  .float-left { 
+  float: left; 
+  } 
+  .float-right { 
+  float: right; 
+  } 
+  .margin-left-bottom { 
+  margin: 0 0 15px 25px; 
+  } 
+  .margin-top-15 { 
+  margin-top: 15px; 
+  } 
+  .margin-bottom-15 { 
+  margin-bottom: 15px; 
+  } 
+  .margin-top-bottom-15 { 
+  margin-top: 15px; 
+  margin-bottom: 15px; 
+  } 
+  .margin-15 { 
+  margin: 15px; 
+  } 
+  .margin-top-10 { 
+  margin-top: 10px; 
+  } 
+  .margin-right-10 { 
+  margin-right: 10px; 
+  } 
+  .margin-right-25 { 
+  margin-right: 25px; 
+  } 
+  .width-150 { 
+  width: 150px; 
+  } 
+  .width-100pc { 
+  width: 100%; 
+  } 
+  .width-90pc { 
+  width: 90%; 
+  } 
+  .width-80pc { 
+  width: 80%; 
+  } 
+  .width-20pc { 
+  width: 20%; 
+  } 
+  .width-50pc { 
+  width: 50%; 
+  } 
+  .clear-both { 
+  clear: both; 
+  } 
+  .border-top-dashed { 
+  border-top: #cccccc dashed 1px; 
+  } 
+  .padding-top-10 { 
+  padding-top: 10px; 
+  } 
+  /* ThNrU-v72 added below */ 
+  .padding-left-10 { 
+  padding-left: 10px; 
+  } 
+ /* ------------------------------ ---- Generic code > ABOVE ---- ------------------------------ */ 
+  /* Added by Callum for compatibility with Practitioner plugin */ 
+  .cpanel_widget_links { 
+  padding-top: 1em; 
+  padding-bottom: 1em; 
+  } 
+  .profile_form_section { 
+  margin-bottom: 2em; 
+  } 
+  .entry-content hr { 
+  clear: both; 
+  } 
+  input[type=file] { 
+  border: 0px; 
+  box-shadow: none; 
+  } 
+  .spinner_loading { 
+  text-align: center; 
+  border: 0px solid #999; 
+  padding: 2em; 
+  display: none; 
+  } 
+ /* initially hide */ 
+  .skills-sublist, .skills-sublist-basicusers { 
+  display: none; 
+  } 
+ /* if i remove this, the narrow column seems to drop down. */ 
+  .skills-wide, .skills-wide-dropdown { 
+  float: left; 
+  } 
+ .hidden-skills-sublist ul { 
+  clear: both; 
+  } 
+  label.error, .check_exists_invalid { 
+  font-size: 14px; 
+  color: red; 
+  font-weight: normal; 
+  display: none; 
+  padding: 3px; 
+  } 
+  .check_exists_valid { 
+  display: none !important; 
+  } 
+  .hidden-skills-sublist { 
+  clear: both; 
+  } 
+  .page-id-950 div.skills-narrow-feedback { 
+  margin-top: 10px; 
+  } 
+  .feedback-container.width-100pc { 
+  width: 80%; 
+  } 
+  .toggle_endorsement_button { 
+  cursor: pointer; 
+  } 
+  .toggle_endorsement_button:hover { 
+  text-decoration: underline; 
+  } 
+  div#condition_row_template { 
+  display: none; 
+  } 
+  .main-place-infobubble-content img { 
+  width: 44px; 
+  height: 44px; 
+  float: left; 
+  margin-right: 10px; 
+  } 
+ /* don't show default jquery validate error on problem tags [TB v101 corrected error] */ 
+  .problem-box-container label.error { 
+  display: none !important; 
+  } 
+  .review_condition_validation_error { 
+  font-size: 75%; 
+  color: red; 
+  font-weight: normal; 
+  display: block; 
+  padding-bottom: 20px; 
+  } 
+  .condition_row>div { 
+  padding-bottom: 20px; 
+  } 
+  p.place-title { 
+  font-weight: bold; 
+  } 
+  a { 
+  cursor: pointer; 
+  } 
+  .cleanlogin-container { 
+  border: 0px !important; 
+  box-shadow: 0px 0px 0px #fff !important; 
+  margin-left: 0px !important; 
+  } 
+  span.textarea_feedback { 
+  padding-bottom: 4px; 
+  font-size: 75%; 
+  display: block; 
+  } 
+  .feedback-container .static-col-auto { 
+  max-width: 260px; 
+  } 
+  .page-id-1175 main.content { 
+  background-color: #ffffdd; 
+  /* [TB v101 edit] */ 
+  } 
+  .page-id-63 main.content { 
+  background-color: #ffffdd; 
+  } 
+  .h3_endorsments a { 
+  color: #111111; 
+  } 
+  div#ui-datepicker-div { 
+  display: none; 
+  } 
+ /* TB restore from BitBucket. CR force some absolute tags to be relative in certain conditions (e.g. Country Header Widget) */ 
+  .force-relative { 
+  position: relative !important; 
+  } 
+  .visible-websites.force-relative { 
+  position: relative !important; 
+  height: auto; 
+  top: auto; 
+  } 
+  .visible-smartphones.force-relative { 
+  position: relative !important; 
+  height: auto; 
+  top: auto; 
+  } 
+  .wnyp_search_result .distance { 
+  color: #000!important; 
+  } 
+  div.skills-wide { 
+  width: 85%!important; 
+  /* Edited by TB, 08-Feb-2018, was 90% */ 
+  } 
+  .skills-narrow { 
+ } 
+  .small-avatar { 
+  width: 17px; 
+  height: 17px; 
+  margin-right: 3px; 
+  vertical-align: middle; 
+  display: inline-block; 
+  } 
+  #email-validated-container { 
+  padding-top: 100px; 
+  } 
+  #email-validated-container h3 { 
+  font-family: arial; 
+  } 
+ /* basic form error */ 
+  .well.error { 
+  margin-bottom: 10px; 
+  list-style: none; 
+  font-size: 75%; 
+  color: red; 
+  font-weight: normal; 
+  padding: 0px; 
+  } 
+  #login-container { 
+  text-align: left; 
+  } 
+  #login-container .login-footer { 
+  clear: both; 
+  } 
+  #login-container .avatar-login { 
+  width: 150px; 
+  } 
+  form.cleanlogin-form fieldset { 
+  border: none!important; 
+  } 
+  form.cleanlogin-form { 
+  width: 75%; 
+  margin: 20px 0px; 
+  } 
+  #login-container .login-top { 
+  width: 100%; 
+  border-bottom: 1px solid #ccc; 
+  margin-top: 0px; 
+  margin-bottom: 13px; 
+  text-align: left; 
+  height: auto; 
+  padding: 0 0 26px 0; 
+  } 
+ /* ------------------------------ ------------------------------ ------------------------------ */ 
+ /* ========================================================= */ 
+  /* ========================================================= */ 
+  /* ========================================================= */ 
+  /* NEW CODE version "ESC" below ====== Use for new sidebar */ 
+  /* ========================================================= */ 
+  /* ========================================================= */ 
+  /* ========================================================= */ 
+  .esc-container { 
+  background: cyan; 
+  padding: 0px; 
+  border: 1px solid #dddddd; 
+  margin: 20px auto; 
+  width: 900px; 
+  display: block; 
+  height: auto; 
+  overflow: hidden; 
+  } 
+  .esc-page-container { 
+  width: 700px; 
+  float: left; 
+  display: inline-block; 
+  border: 0px; 
+  } 
+  .esc-page { 
+  background: #fff; 
+  padding: 20px; 
+  margin-bottom: 0px; 
+  margin-top: 0px; 
+  overflow: hidden; 
+  border: 0px; 
+  } 
+  .esc-sidebar-container { 
+  background: white; 
+  width: 198px; 
+  float: right; 
+  display: inline-block; 
+  padding: 20px; 
+  border: 0px; 
+  } 
+  .esc-sidebar-profile { 
+  width: 75%; 
+  display: inline-block; 
+  float: left; 
+  padding: 0; 
+  margin: 0 0 10px 0; 
+  border-bottom: 1px solid #ccc; 
+  padding-bottom: 0px; 
+  max-width: 160px; 
+  } 
+  .esc-sidebar-profile-under { 
+  width: 20%; 
+  padding: 0; 
+  margin: 0 0 10px 0; 
+  border-bottom: 0px solid #ccc; 
+  padding-bottom: 0px; 
+  } 
+  .esc-sidebar-profile img { 
+  width: 100%; 
+  } 
+  .esc-sidebar-profile-under img { 
+  width: 95%; 
+  } 
+  h2.esc-sidebar { 
+  font-size: 15px; 
+  width: 100%; 
+  display: block; 
+  color: #111111; 
+  } 
+  h3.esc-sidebar-bold, h3.esc-sidebar-normal { 
+  width: 100%; /* Toby 22-mar-18; added */ 
+  font-size: 13px; 
+  margin: 0px; 
+  display: block; 
+  float: left; 
+  } 
+  h3.esc-sidebar-bold { 
+  font-weight: 700; 
+  color: #111111; 
+  } 
+  h3.esc-sidebar-normal { 
+  font-weight: 400; 
+  color: #555555; 
+  margin-bottom: 7px; 
+  } 
+  p.esc-sidebar a, h3.esc-sidebar-normal a, h3.esc-sidebar-bold a { 
+  font-weight: 700; 
+  padding-right: 0px; 
+  } 
+  p.esc-sidebar { 
+  font-size: 13px; 
+  color: #555555; 
+  margin-bottom: 7px; 
+  } 
+  .esc-sidebar-profile-under .esc-mini-endorse p { 
+  width: 95%; 
+  } 
+  .esc-mini-endorse p { 
+  font-size: 12px; 
+  color: #333333; 
+  margin-bottom: 7px; 
+  background: #f7f7f7; 
+  width: 100%; 
+  display: block; 
+  padding: 4px 5px 0px 5px; 
+  overflow: hidden; 
+  border-radius: 2px; 
+  border-bottom: 1px solid #ccc; 
+  border-top: 1px solid #eee; 
+  border-left: 1px solid #ddd; 
+  border-right: 1px solid #ccc; 
+  font-weight: 400; 
+  height: 22px; 
+  } 
+  .esc-mini-endorse p:after { 
+  content: url('/image-files/sprites/tick-blue-tiny-crop.png'); 
+  padding: 0 0 0 3px; 
+  float: right; 
+  width: 10px; 
+  background: transparent; 
+  } 
+  h3.esc-sidebar-bold, h3.esc-sidebar-normal, p.esc-sidebar { 
+  overflow: hidden; 
+  white-space: normal; 
+  float: left; 
+  padding-right: 0px; 
+  } 
+  .esc-container-left { 
+  float: left; 
+  width: 45%; 
+  } 
+  .esc-container-right { 
+  float: right; 
+  width: 55%; 
+  } 
+  .esc-container-left, .esc-container-right { 
+  overflow: hidden; 
+  } 
+ .esc-padding-top-11 { 
+  display: block; 
+  padding: 11px 0 0 0; 
+  } 
+  .esc-container-contact { 
+  float: right; 
+  width: 73%; 
+  background: none; 
+  display: inline-block; 
+  } 
+  #author_pic_contact_esc { 
+  background: none; 
+  width: 25%; 
+  height: auto; 
+  float: left; 
+  margin: 5px 2% 5px 0; 
+  float: left; 
+  } 
+ /* [BELOW] ESC Page Content - Not Sidebar code ... Not active when given to WNY (7-Feb-18) */ 
+  h2.esc-smartphone-top-border { 
+  margin-top: 20px; 
+  padding: 11px 0 0 0; 
+  border-top: 0px solid #ccc; 
+  width: 100%; 
+  display: block; 
+  overflow: hidden; 
+  } 
+ .esc-image-gallery { 
+  width: 100%; 
+  height: 200px; 
+  display: block; 
+  overflow: hidden; 
+  margin: 15px 0; 
+  } 
+  .esc-image-one { 
+  padding: 0px; 
+  margin: 0px; 
+  border: 0px; 
+  width: 25%; 
+  height: auto; 
+  display: inline-block; 
+  float: left; 
+  } 
+  .esc-image-one img { 
+  } 
+  /* [ABOVE] ESC Page Content - Not Sidebar code ... Not active when given to WNY (7-Feb-18) */ 
+ p.esc-col-half1, p.esc-col-half2 { 
+  width: 48%; 
+  margin-right: 2%; 
+  font-weight: 400; 
+  color: #555555; 
+  float: left; 
+  } 
+  .vanishing-line-w650-esc hr { 
+  display: none; 
+  } 
+  .esc-sidebar-under { width: 100%!important; height: 340px; overflow:hidden; position: relative; background: #e7e5db; padding:20px; } 
+  .esc-sidebar-content{ height: 300px; overflow: hidden; width: 96%; display: block; position: absolute; } 
+  .widget_practitioner_list_widget .right,.esc-sidebar-under .right{ background: url(/image-files/right.png) no-repeat; width:30px; height: 50px; right:20px; margin-top:60px; cursor: pointer; position: absolute; } 
+ .widget_practitioner_list_widget .left, .esc-sidebar-under .left{ background: url(/image-files/left.png) no-repeat; width:30px; height: 50px; left:20px; cursor: pointer; margin-top:60px; position: absolute; } 
+  .esc-sidebar-under .right:hover { 
+  background-position-x: 2px; 
+  } 
+  .esc-sidebar-under .left:hover { 
+  background-position-x: -2px; 
+  } 
+ .widget_practitioner_list_widget .disabled, .esc-sidebar-under .disabled{ display:none!important; } 
+  .esc-sidebar-profile-item { 
+  height: 340px!important; 
+  width:140px!important; 
+  padding: 0px; /* TB 22-mar-18; was 0px 10px 0px 0px; */ 
+  } 
+  .esc-sidebar-profile-item img { 
+  width:140px!important; 
+  max-width:180px; 
+  } 
+  .update-nag, .updated.notice-success, #update-nag{ 
+  display:none!important; 
+  } 
+  .cleanlogin-form .cleanlogin-field-username, .cleanlogin-form .cleanlogin-field-password{ 
+  width:300px!important; 
+  margin-bottom:5px; 
+  } 
+ .esc-sidebar-profile-item{ 
+  display:inline-block; 
+  position: absolute; 
+  } 
+  div.left, div.right{ 
+  position: absolute; 
+  z-index: 9999; 
+  } 
+  form#fmfill{ width:100%; max-width: 500px!important; height:300px; padding:0px; }
+  input.paypal-btn { /* 116.6 edited */ 
+    display:block;
+    background-image: url(/image-files/paynow.jpg); 
+    width: 60%; 
+    height: 60%; 
+    background-size: contain;
+    background-repeat: no-repeat;
+    border: none; 
+  } 
+  /* --------------------------------------------- Works with HAMBURGER NAV (below) --------------------------------------------- */ 
+ /*
+  .menu-primary { 
+  clear: both; 
+  } 
+  .sub-menu-toggle, .menu-toggle { 
+  display: none; 
+  visibility: hidden; 
+  } 
+  */
+  
+  /* --------------------------------------------- Works with HAMBURGER NAV (above) --------------------------------------------- */ 
+  /* ------------------------------ --- Responsive code > BELOW -- ------------------------------ */ 
+ /* Media Queries ------------------------------------------------------------------------------------------ TherapyNearYou (Engage theme) ---------- */ 
+  /* Desktops, laptops and iPads (landscape) ----------------------------------- TherapyNearYou (Engage theme) ---------- */ 
+ @media screen and (max-width: 1155px) { 
+  .width-150 { 
+  width: 175px; 
+  } 
+  } 
+  /* iPads (portrait) ----------------------------------- TherapyNearYou (Engage theme) ---------- */ 
+  @media only screen and (max-width: 990px) { 
+  .visible-websites { 
+  display: none; 
+  text-align: left; 
+  } 
+  .visible-smartphones { 
+  display: block; 
+  text-align: left; 
+  } 
+  .visible-smartphones p { 
+  line-height: 1.00em; 
+  } 
+
+  } 
+  
+  @media only screen and (max-width: 970px) { 
+  .content-sidebar-sidebar .content, .sidebar-primary, .sidebar-sidebar-content .content, .sidebar-sidebar-content .content-sidebar-wrap { 
+  width: 20%; 
+  } 
+  .sidebar-secondary { 
+  width: 100%; 
+  } 
+  .sidebar-content-sidebar .content { 
+  width: 80%; 
+  } 
+  } 
+ @media only screen and (max-width: 950px) { 
+  .esc-container { 
+  width: 100%; 
+  } 
+  .esc-page-container { 
+  width: 80%; 
+  } 
+  .esc-sidebar-container { 
+  width: 20%; 
+  } 
+  } 
+ /* iPhones (portrait and landscape) ----------------------------------- TherapyNearYou (Engage theme) ---------- */ 
+  @media only screen and (max-width: 900px) { 
+
+  } 
+  
+  @media only screen and (max-width: 890px) { 
+
+  } 
+  
+  @media only screen and (max-width: 860px) { 
+
+  .visible-smartphones { 
+  margin: 0px; 
+  text-align: left; 
+  padding: 0 0 0 10px; 
+  } 
+  .visible-smartphones p { 
+  text-align: left; 
+  } 
+  .wny-cropper-main { 
+  width: 100%; 
+  } 
+  .wny-cropper-preview-container { 
+  width: 100%; 
+  height: 165px; 
+  float: none; 
+  margin: 0 0 20px 0; 
+  } 
+  } 
+ @media only screen and (max-width: 830px) { 
+  .esc-sidebar-container { 
+  width: 100%; 
+  background: #e7e5db; 
+  } 
+  h2.esc-sidebar { 
+  font-size: 18px; 
+  width: 100%; 
+  display: block; 
+  } 
+  h3.esc-sidebar-bold { 
+  width: 100%; /* Toby 22-mar-18; was 95% */ 
+  overflow: hidden; 
+  white-space: nowrap; 
+  } 
+  p.esc-sidebar { 
+  width: 95%; /* Toby 22-mar-18; was 95% */ 
+  overflow: hidden; 
+  white-space: nowrap; 
+  } 
+  h3.esc-sidebar-normal { 
+  width: 100%; /* Toby 22-mar-18; was 95% */ 
+  overflow: hidden; 
+  white-space: normal; 
+  } 
+  .esc-page-container { 
+  width: 100%; 
+  border-top: 0px solid #dddddd; 
+  border-right: 0px solid #dddddd; 
+  border-bottom: 0px solid #dddddd; 
+  border-left: 0px solid #dddddd; 
+  } 
+  .esc-sidebar-profile { 
+  width: 20%; 
+  margin: 0 0 10px 0; 
+  } 
+  .esc-sidebar-profile-under { 
+  width: 20%; 
+  margin: 0 0 10px 0; 
+  } 
+  .esc-sidebar-profile img { 
+  width: 100%; 
+  } 
+  .esc-sidebar-profile-under img { 
+  } 
+  .esc-mini-endorse p { 
+  } 
+  } 
+  
+
+ 
+ @media only screen and (max-width: 830px) { 
+ .sidebar.sidebar-primary.widget-area{ width: 100%; height: 270px; background: #e7e5db; overflow:hidden; }
+ 
+ .widget_practitioner_list_widget{ width:100%; } 
+ 
+ .widget_practitioner_list_widget .left, .widget_practitioner_list_widget .right{ display:block; } 
+ 
+  .esc-sidebar-content2{ height: 300px; overflow: hidden; width: 96%; display: block; position: absolute; } 
+  
+  div.esc-sidebar-profile{ display:block!important; margin-right: 10px; margin-bottom:100px; width:100px!important; max-width: 100px!important; height:220px!important; position: absolute!important; } 
+  div.esc-sidebar-profile h3 a{ display:block!important; } .esc-sidebar-profile img{ width:100px!important; height: 100px!important; } } 
+
+ @media only screen and (max-width: 830px) { 
+
+  } 
+  
+ @media only screen and (max-width: 800px) { 
+
+    .esc-sidebar-profile-under { 
+     width: 33%; 
+    } 
+  } 
+  
+ /* ThNrU-v72 make all links underline for ipads and narrower */
+ 
+ @media only screen and (max-width: 770px) { a, span.blue-bold, span.blue-bold-tick { text-decoration: underline; } .thnru-button-orange-mini { /* v116.4 added */ padding: 5px 10px 5px 10px; } } 
+ @media only screen and (max-width: 767px) { 
+
+  } 
+  
+ /* ThNrU-v87 added below. "Apple iPhone 6 Plus", landscape width = 736px */ 
+  @media only screen and (max-width: 740px) { 
+
+  } 
+  @media screen and (max-width: 710px) { 
+  .width-150 { 
+  width: 150px; 
+  } 
+  } 
+  
+ /* ------------------------------ --- Hamburger menu > BELOW --- ------------------------------ */ 
+
+
+  /* ------------------------------ --- Hamburger menu > ABOVE --- ------------------------------ */ 
+  /* ------------------------------ ------------------------------ ------------------------------ */ 
+  /* ------------------------------ ------------------------------ ------------------------------ */ 
+ @media only screen and (max-width: 700px) { 
+    .esc-image-gallery { 
+      height: 180px; 
+    } 
+  } 
+
+ @media screen and (max-width: 660px) { 
+
+  } 
+
+ @media only screen and (max-width: 650px) { 
+    .esc-image-gallery { 
+        height: 170px; 
+    } 
+  } 
+
+  @media only screen and (max-width: 650px) { 
+    .esc-container-left, .esc-container-right { 
+        width: 100%; 
+        margin: 0; 
+        float: none; 
+    } 
+    h2.esc-smartphone-top-border { 
+        border-top: 1px solid #ccc; 
+    } 
+    .esc-padding-top-11 { 
+        display: block; 
+        padding: 0px 0 0 0; 
+    } 
+  } 
+
+  @media screen and (max-width: 650px) { 
+    .vanishing-line-w650-esc { 
+        display: block; 
+        width: 100%; 
+        height: 1px; 
+        background: #cccccc; 
+        border: none; 
+        outline: none; 
+        padding: 0px !important; 
+        margin: 11px 0 13px 0 !important; 
+    } 
+  } 
+
+ @media only screen and (max-width: 610px) { 
+    .dynamic-col-25pc-right { 
+        width: 68%; 
+        margin-right: 2%; 
+    } 
+    .dynamic-col-25pc-left { 
+        width: 30%; 
+    } 
+    p.cv-col-left { 
+        width: 100%; 
+        font-weight: 700; 
+        margin-bottom: 2px; 
+    } 
+    p.cv-col-right { 
+        width: 100%; 
+        font-weight: 400; 
+    } 
+  } 
+ @media only screen and (max-width: 580px) { 
+    .esc-image-gallery { 
+     height: 160px; 
+    } 
+  } 
+
+ @media only screen and (max-width: 570px) { 
+    .search-results-title { 
+      width: 100%; 
+    } 
+    .width-90pc { 
+      width: 100%; 
+    } 
+    .dynamic-col-25pc-right { 
+      width: 100%; 
+       margin-right: 0%; 
+    } 
+    .dynamic-col-25pc-left { 
+     width: 100%; 
+    } 
+    .dynamic-top-margin-w550 { 
+     margin-top: 10px; 
+    } 
+  } 
+
+  @media screen and (max-width: 560px) { 
+     form.cleanlogin-form { width: 100%; }
+    .width-150 { width: 135px; }  
+    .site-header .widget-area { padding: 0; } 
+ }
+
+ @media only screen and (max-width: 550px) { 
+    .esc-image-gallery { 
+     height: 150px; 
+    } 
+  } 
+  @media only screen and (max-width: 550px) { 
+    .esc-container-contact { 
+        width: 100%; 
+        margin: 0; 
+        float: none; 
+    } 
+    #author_pic_contact_esc { 
+        width: 50px; 
+        height: 50px; 
+        margin: 2px 5px 5px 0; 
+        float: left; 
+    } 
+  } 
+ @media only screen and (max-width: 520px) { 
+   .esc-image-gallery { 
+     height: 140px; 
+    } 
+  } 
+
+  @media screen and (max-width: 510px) {
+    .visible-smartphones { height: 50px; }
+    .width-150 { background: none; width: 60%; }
+    .thnru-review-box-sm { height: 99px; }
+    .margin-left-bottom { margin-top: 0px; margin-right: 0px; margin-bottom: 15px; margin-left: 0% !important; }
+    
+    #author_pic { width: 143px; height: 143px; margin: 0 0 10px 0; }
+    #author_pic img { border-radius: 3px; -moz-border-radius: 3px; -webkit-border-radius: 3px; }
+    .vanishing-line hr { display: block; width: 100%; height: 1px; background: #cccccc; border: none; outline: none; padding: 0px !important; margin: 11px 0 13px 0 !important; }
+    .site-header .widget-area { padding: 0px; vertical-align: middle; margin-left: auto; margin-right: auto; width: 100%; float: none; }
+    .title-area { float: none; margin: 0 auto 0 auto; }
+ } 
+
+ @media only screen and (max-width: 510px) { /* was 497px */ 
+  .endorse-pill, .endorse-pill-dropdown { 
+   background: #f7f7f7 url('/image-files/sprites/edge-yellow-w90.gif') right top repeat-y; 
+   background-size: 77px auto; 
+   min-height: 31px !important; 
+  } 
+  .skills-narrow, .skills-narrow-dropdown, .skills-wide, .skills-wide-dropdown, p.endorse-number, p.endorse-skill { 
+   font-size: 16px; 
+   line-height: 1.25em; 
+  }
+
+  p.endorse-skill { 
+   width: -moz-calc(100% - 77px); 
+   width: -webkit-calc(100% - 77px); 
+   width: -o-calc(100% - 77px); 
+   width: calc(100% - 77px); 
+  }
+
+  p.endorse-number-cp, p.endorse-number { 
+   width: 77px; 
+  } 
+
+  p.endorse-number-cp { 
+   padding: 1px 0 0 0; 
+  }
+
+  span.blue-bold-tick:after, p.endorse-number:after { 
+   content: url("/image-files/sprites/tick-blue-tags.png"); 
+   padding: 0 0 0 3px; 
+  } 
+
+  .endorse-sublist p a { 
+   display: block; 
+   padding-right: 0px; 
+  } 
+
+ .skills-narrow ul li:after, .skills-narrow-dropdown ul li:after { 
+   content: url("/image-files/sprites/tick-blue-tags.png"); 
+   padding: 0 0 0 3px; 
+  } 
+  .skills-sublist, .skills-sublist-basicusers { 
+   background: #ffffee; 
+  } 
+} 
+
+@media only screen and (max-width: 490px) { 
+  .esc-image-gallery { 
+    height: 130px; 
+   } 
+  input.paypal-btn { /* 116.6 edited */ 
+    width: 100%; 
+    height: 100%; 
+  } 
+} 
+
+@media only screen and (max-width: 455px) { 
+  .esc-image-gallery { 
+    height: 120px; 
+    } 
+} 
+@media screen and (max-width: 440px) {  
+   .width-150 { width: 50%; } 
+} 
+@media only screen and (max-width: 425px) { 
+  .esc-image-gallery { 
+    height: 110px; 
+  } 
+} 
+
+@media screen and (max-width: 380px) { 
+  .sidebar-secondary .widget-wrap, .sidebar .widget-wrap { 
+  padding: 15px; 
+  } 
+  main.content { 
+  padding: 15px; 
+  } 
+  .inside-user-feedback-v34 { 
+  border: 5px solid #cccccc; 
+  padding: 10px; 
+  } 
+  .testimonial-text:after { 
+  display: none; 
+  } 
+  .testimonial-text p { 
+  padding: 0 0 0 30px; 
+  } 
+  h5 { 
+   font-size: 13px; 
+  } 
+} 
+
+@media screen and (max-width: 350px) { 
+  .thnru-button-orange { 
+    font-size: 13px; 
+    line-height: 13px; 
+    padding: 5px 3px 5px 3px; 
+  } 
+  #author_pic { 
+    width: 112px; 
+    height: 112px; 
+    margin: 0 0 10px 0; 
+  } 
+  h5 { 
+    font-size: 75%; 
+  } 
+} 
+
+@media only screen and (max-width: 330px) { 
+    .sidebar-secondary .widget-wrap, .sidebar .widget-wrap { 
+        padding: 10px; 
+    } 
+    main.content, .esc-sidebar-under { 
+      padding: 10px; 
+    } 
+    .endorse-sublist-basicusers p a { 
+      display: block; 
+      padding-right: 0px; 
+    } 
+    p.thnru-small-text { 
+      font-size: 75%; 
+    } 
+} 
+
+@media only screen and (max-width: 320px) { 
+    .header-image .site-header .title-area { 
+      background-size: contain !important; 
+    } 
+} 
+
+.upgrade-section{
+  display:table; 
+  margin-bottom:20px; 
+}
+
+.upgrade-button{
+  float:none!important;
+  display:inline-block!important; 
+  width:auto;
+ } 
+
+#challenge-popup{
+  border-radius: 25px!important;
+ } 
+
+#challenge-popup iframe{
+  width:700px; height:700px; 
+ }
+
+@media only screen and (max-width: 550px) {
+  #challenge-popup iframe{
+   width:600px; height:800px; 
+  }
+ }
+
+ @media only screen and (max-width: 400px) {
+  #challenge-popup iframe{
+    width:600px; height:850px; 
+  }
+ }
+ @media only screen and (max-width: 350px) {
+  #challenge-popup iframe{
+  width:600px; height:900px; 
+  }
+ } 
+ #challenge-body{ padding:10px; background:#fff; overflow:scroll!important; position:relative; }
+ #challenge-body h1{ font-size:24px!important; }
+ #challenge-body body{ background: #fff; }
+ #challenge-body body *{ font-size:16px;}
+ .challenge-button-submit{ float:right; font-weight:bold; } 
+ .not-serviced{ color: red; font-size: 14px; margin-top: 2px; position: relative; float:left; display:none; } 
+ .challenge-number{ width: 50px; text-align:center;padding:5px; } .terms-condition-error, 
+ #no_written_and_tag_error{ color:red; font-size:14px; display:none;}
+
+ form#fmfill {
+ max-width: 100px;
+ }
+ 
+
+
+
+
+ #author_long_text{
+    width:410px; float:left;  
+ }
+
+ #review_validation_error .red{
+     color:red; /* this is not visible to the user if we are just displaying this in plain black text */
+ }
+
+ .inside-user-feedback-v34  hr{
+     padding:5px; 
+}
+
+
+
+.ourcustom-entry .entry-image-link{
+	float:left;
+	margin-right:10px;
+	height: 90px;
+	width: 90px;
+	}
